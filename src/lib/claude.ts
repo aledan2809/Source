@@ -40,7 +40,7 @@ const router = new AIRouter({
 export async function runClaude(prompt: string, options?: ClaudeOptions): Promise<string> {
   const response: AIResponse = await router.chat({
     messages: [{ role: 'user', content: prompt }],
-    provider: options?.provider || sourcePreset.defaultProvider || 'claude',
+    provider: options?.provider || 'auto', // 'auto' enables fallback chain across all providers
   });
 
   console.log(`[AI] Using: ${response.provider}${response.fallback ? ` (fallback from ${response.fallbackFrom})` : ''} | ${response.latencyMs}ms`);
@@ -61,7 +61,7 @@ export async function runAI(
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt },
     ],
-    provider: options?.provider || sourcePreset.defaultProvider || 'claude',
+    provider: options?.provider || 'auto', // 'auto' enables fallback chain
     jsonMode: options?.jsonMode,
   });
 
