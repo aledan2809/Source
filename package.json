@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3030 --webpack",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "next start -p 3030",
+    "lint": "eslint",
+    "test": "npx tsx src/__tests__/api.test.ts",
+    "test:ci": "npx tsx src/__tests__/api.test.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@google/genai": "^1.46.0",
+    "ai-router": "file:../AIRouter",
     "next": "16.1.7",
     "react": "19.2.3",
     "react-dom": "19.2.3"

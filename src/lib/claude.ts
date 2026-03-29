@@ -69,6 +69,85 @@ export async function runAI(
   return response;
 }
 
+/**
+ * Run AI with quality validation — if the response fails quality check,
+ * retry with a different provider (up to maxRetries different providers).
+ * Used for sourcing where low-quality providers return fabricated suppliers.
+ */
+export async function runClaudeWithQualityRetry(
+  prompt: string,
+  qualityCheck: (raw: string) => Promise<{ pass: boolean; reason?: string }> | { pass: boolean; reason?: string },
+  options?: ClaudeOptions & { maxProviderRetries?: number }
+): Promise<string> {
+  const maxRetries = options?.maxProviderRetries ?? 2;
+  const triedProviders: string[] = [];
+  const availableProviders = router.getAvailableProviders();
+
+  let lastContent = '';
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      const response: AIResponse = await router.chat({
+        messages: [{ role: 'user', content: prompt }],
+        provider: options?.provider || 'auto',
+        // On retry, hint that we want quality over speed
+        speedVsQuality: attempt > 0 ? 0 : 0.3,
+      });
+
+      lastContent = response.content;
+      const check = await Promise.resolve(qualityCheck(response.content));
+      triedProviders.push(response.provider);
+
+      if (check.pass) {
+        console.log(`[AI] Using: ${response.provider} (attempt ${attempt + 1}) | ${response.latencyMs}ms | Quality: PASS`);
+        return response.content;
+      }
+
+      console.warn(`[AI] Quality FAIL from ${response.provider} (attempt ${attempt + 1}): ${check.reason}`);
+
+      if (attempt < maxRetries) {
+        // Mark provider as unhealthy so router picks a DIFFERENT one next time
+        const health = router.getHealth().find(h => h.id === response.provider);
+        if (health) {
+          health.healthy = false;
+          health.totalCalls += 10;
+          health.totalErrors += 10;
+          health.successRate = 0;
+          health.lastCheck = Date.now(); // Reset cooldown timer
+        }
+        console.log(`[AI] Retrying with different provider (tried: ${triedProviders.join(', ')})`);
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`[AI] Provider error on attempt ${attempt + 1}: ${msg.substring(0, 150)}`);
+      // Don't throw — try next attempt
+    }
+  }
+
+  // Restore health for tried providers (don't pollute future requests)
+  for (const pid of triedProviders) {
+    const health = router.getHealth().find(h => h.id === pid);
+    if (health) {
+      health.healthy = true;
+      health.successRate = 0.5;
+    }
+  }
+
+  // All retries exhausted — return best available content
+  if (lastContent) {
+    console.warn(`[AI] All ${maxRetries + 1} attempts failed quality. Using best available response (tried: ${triedProviders.join(', ')})`);
+    return lastContent;
+  }
+
+  // True fallback: try any provider directly
+  console.warn(`[AI] Emergency fallback — trying any available provider`);
+  const response = await router.chat({
+    messages: [{ role: 'user', content: prompt }],
+    provider: 'auto',
+  });
+  return response.content;
+}
+
 /** Export the router instance for direct access (health checks, etc.) */
 export { router as aiRouter };
 export type { AIProviderSelection, AIResponse };

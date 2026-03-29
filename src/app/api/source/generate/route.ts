@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { writeFile, mkdir, readFile } from 'fs/promises';
 import path from 'path';
 import { randomUUID } from 'crypto';
-import { runClaude, CLAUDE_TIMEOUTS } from '@/lib/claude';
+import { runClaude, runClaudeWithQualityRetry, runAI, CLAUDE_TIMEOUTS } from '@/lib/claude';
 import type { AIProviderSelection } from '@/lib/claude';
 import { safeUpdateJSON, safeWriteJSON, DATA_PATHS, getResultPath } from '@/lib/file-operations';
 import { validateFormData, checkRateLimit } from '@/lib/validation';
 import { validateSourcing } from '@/lib/guardrails';
 import { createPipeline, transition, computeQualityScore, STAGES, EVENTS, type PipelineState } from '@/lib/pipeline';
+import { discoverRealSuppliers, type DiscoveredSupplier } from '@/lib/supplier-discovery';
+import { generateLearningContext } from '@/lib/learnings';
+import { logger } from '@/lib/logger';
 
 // Normalize URL for comparison (strip trailing slash, www, protocol)
 function normalizeUrl(url: string): string {
@@ -111,9 +114,9 @@ function extractProductKeywords(description: string): { primary: string[]; secon
   const secondary: string[] = []; // Supporting terms (lower value)
 
   // Patterns for important short product identifiers
-  const shortProductTerms = /^(atv|utv|4x4|2wd|4wd|suv|mpv|led|lcd|cnc|hvac|eps|abs|cvt|rar|ecu)$/i;
+  const shortProductTerms = /^(atv|utv|4x4|2wd|4wd|suv|mpv|led|lcd|cnc|hvac|eps|abs|cvt|rar|ecu|kwh|pv)$/i;
   // Patterns for technical specs that are important
-  const techSpecs = /^\d+cc$|^\d+kw$|^\d+hp$|^\d+[vV]$|^\d+[wW]$/;
+  const techSpecs = /^\d+cc$|^\d+kw$|^\d+kwh?$|^\d+hp$|^\d+[vV]$|^\d+[wW]$|^\d+ah$/;
 
   for (const w of words) {
     const clean = w.replace(/[^a-zA-Z0-9ăâîșțĂÂÎȘȚ]/g, '');
@@ -137,7 +140,7 @@ function extractProductKeywords(description: string): { primary: string[]; secon
     }
 
     // Product-category keywords get primary status
-    const productCategoryPattern = /combusti|transmisi|automat|omolog|portant|recreat|competi|motor|vehicul|quad|moto|scuter|tractor|excavat|utilaj|echipament|industrial|electric|hidraulic|pneumatic|generator|compresor|pompa|sudur|frezat|strung|buldozer|macara|încărcăt|stivuitor/i;
+    const productCategoryPattern = /combusti|transmisi|automat|omolog|portant|recreat|competi|motor|vehicul|quad|moto|scuter|tractor|excavat|utilaj|echipament|industrial|electric|hidraulic|pneumatic|generator|compresor|pompa|sudur|frezat|strung|buldozer|macara|încărcăt|stivuitor|inverter|invertoare|panouri|solar|fotovoltaic|baterie|acumulator|monofazat|trifazat|deye|huawei|growatt|sungrow|fronius|victron|mppt|hybrid|on.?grid|off.?grid|litiu|lifepo|kwh|panou|modul|conector|cablu|tablou|prosumator/i;
     if (productCategoryPattern.test(clean)) {
       primary.push(clean);
     } else if (clean.length > 3) {
@@ -326,16 +329,22 @@ async function findProductUrls(
         }
 
         // ── SECONDARY: DuckDuckGo search (free, no API key needed) ──
-        const ddgQuery = s.productSearchQuery
+        // Build specific product query combining primary keywords
+        const ddgProductTerms = s.productSearchQuery
           ? s.productSearchQuery.replace(/^site:\S+\s*/i, '')
-          : primaryKeywords.join(' ');
+          : primaryKeywords.slice(0, 5).join(' ');
 
-        // Try with site restriction first
-        let ddgUrl = await searchDuckDuckGo(`site:${hostname} ${ddgQuery}`);
+        // Strategy 1: site-restricted search with product terms
+        let ddgUrl = await searchDuckDuckGo(`site:${hostname} ${ddgProductTerms}`);
 
-        // If no result, try supplier name + product keywords
+        // Strategy 2: supplier name + full product description keywords
         if (!ddgUrl) {
-          ddgUrl = await searchDuckDuckGo(`${s.name} ${ddgQuery}`);
+          ddgUrl = await searchDuckDuckGo(`${s.name} ${ddgProductTerms} cumpara pret`);
+        }
+
+        // Strategy 3: direct product search without site restriction
+        if (!ddgUrl) {
+          ddgUrl = await searchDuckDuckGo(`${ddgProductTerms} ${hostname.replace('www.', '')} produs`);
         }
 
         if (ddgUrl && !isHomepageUrl(ddgUrl)) {
@@ -362,14 +371,30 @@ async function findProductUrls(
 
         const html = await res.text();
 
+        // Quick relevance check: does the homepage mention ANY primary keyword?
+        const htmlLower = html.toLowerCase();
+        const homepageRelevant = primaryKeywords.some(kw => htmlLower.includes(kw));
+        if (!homepageRelevant) {
+          console.log(`[ProductSearch] ${s.name}: homepage does NOT mention any primary keyword — likely irrelevant supplier`);
+          // Still set website for verification, but no product URL
+          map[i] = { productUrl: '', website: s.website };
+          return;
+        }
+
         // Extract all links from the page
         const extractLinks = (pageHtml: string): string[] => {
           const linkMatches = pageHtml.matchAll(/href=["']([^"']+)["']/gi);
           const found: string[] = [];
           for (const m of linkMatches) {
             let href = m[1];
+            // Skip protocol-relative URLs (//cdn.example.com) and external resources
+            if (href.startsWith('//')) continue;
             if (href.startsWith('/')) href = baseUrl + href;
+            // Only include links from the same domain
             if (href.startsWith('http') && href.includes(hostname)) {
+              // Skip obvious non-page resources
+              if (/\.(css|js|woff2?|ttf|eot|ico|svg|png|jpg|jpeg|gif|webp|avif)(\?|$)/i.test(href)) continue;
+              if (href.includes('fonts.googleapis.com') || href.includes('cdn.') || href.includes('assets.')) continue;
               found.push(href);
             }
           }
@@ -383,6 +408,10 @@ async function findProductUrls(
           /\/categori/i, /\/categ\//i, /\/produse\b/i, /\/products\b/i,
           /\/shop\b/i, /\/magazin\b/i, /\/catalog\b/i, /\/gama\b/i,
           /\/modele\b/i, /\/range\b/i, /\/lineup\b/i,
+          /\/echipamente\b/i, /\/solutii\b/i, /\/oferte\b/i,
+          /\/invertor/i, /\/inverter/i, /\/panouri/i, /\/baterii/i,
+          /\/fotovoltaic/i, /\/solar\b/i, /\/rezidential/i,
+          /\/search\?/i, /\/cautare\?/i, // Internal search pages
         ];
         const categoryLinks = allLinks.filter(link => {
           const path = new URL(link).pathname.toLowerCase();
@@ -395,7 +424,7 @@ async function findProductUrls(
           return primaryKeywords.some(kw => pathLower.includes(kw));
         });
 
-        const pagesToCrawl = [...new Set([...categoryLinks, ...keywordCategoryLinks])].slice(0, 3); // Max 3 extra pages
+        const pagesToCrawl = [...new Set([...categoryLinks, ...keywordCategoryLinks])].slice(0, 5); // Max 5 extra pages
 
         if (pagesToCrawl.length > 0) {
           console.log(`[ProductSearch] ${s.name}: crawling ${pagesToCrawl.length} category page(s)`);
@@ -738,17 +767,15 @@ export async function POST(request: NextRequest) {
       ? `Regională${spec.zoneLocation ? ' — ' + spec.zoneLocation : ''}`
       : 'Globală';
 
-    const learnings = await loadLearnings();
+    const learnings = await generateLearningContext(spec.description);
 
     const budgetLine = spec.budgetMin || spec.budgetMax
       ? `- Buget MAXIM OBLIGATORIU: ${spec.budgetMin || '0'} - ${spec.budgetMax} ${spec.currency} ← RESPECTĂ STRICT, nu depăși acest buget`
       : '- Buget: Nespecificat';
 
-    let userContent = `Generează pachetul complet de sourcing pentru:
+    let userContent = `DESCRIERE: ${spec.description}
 
-DESCRIERE: ${spec.description}
-
-DETALII TEHNICE (au prioritate absolută față de orice din descriere):
+DETALII TEHNICE:
 - Tip: ${spec.type === 'cumparare' ? 'Cumpărare' : 'Închiriere'}
 ${spec.type === 'cumparare' && spec.condition ? `- Condiție: ${spec.condition === 'nou' ? 'Nou' : spec.condition === 'second-hand' ? 'Second-hand' : 'Indiferent'}` : ''}
 - Zonă: ${zoneLabel}
@@ -769,44 +796,83 @@ ${budgetLine}`;
 
     if (spec.refinementFeedback && spec.previousResult) {
       userContent += `\n\nACEASTA ESTE O CĂUTARE RAFINATĂ.
-FEEDBACK UTILIZATOR PENTRU REZULTATUL ANTERIOR: ${spec.refinementFeedback}
-Îmbunătățește rezultatul anterior ținând cont de feedback. Înlocuiește furnizorii nesatisfăcători, ajustează RFQ-ul și emailurile.`;
+FEEDBACK UTILIZATOR: ${spec.refinementFeedback}`;
     }
+
+    // ════════════════════════════════════════════════════════════════════════
+    // STEP 1: DISCOVER REAL SUPPLIERS VIA WEB SEARCH (before AI call)
+    // This is the core fix: search FIRST, then let AI compile from real data.
+    // ════════════════════════════════════════════════════════════════════════
+    logger.info('[Generate] Step 1: Discovering real suppliers via web search...');
+
+    const discoveredSuppliers = await discoverRealSuppliers({
+      description: spec.description,
+      zone: spec.zone,
+      zoneLocation: spec.zoneLocation,
+      type: spec.type,
+      condition: spec.condition,
+    });
+
+    logger.info(`[Generate] Found ${discoveredSuppliers.length} verified suppliers from web search`);
+
+    // Build supplier context for AI — real data, not hallucination
+    let supplierContext = '';
+    if (discoveredSuppliers.length > 0) {
+      supplierContext = '\n\nFURNIZORI REALI GĂSIȚI PRIN CĂUTARE WEB (folosește DOAR aceștia, nu inventa alții):\n';
+      for (let i = 0; i < discoveredSuppliers.length; i++) {
+        const s = discoveredSuppliers[i];
+        supplierContext += `\n${i + 1}. ${s.name}`;
+        supplierContext += `\n   Website: ${s.website}`;
+        if (s.productUrl) supplierContext += `\n   Pagina produs: ${s.productUrl}`;
+        if (s.contactEmail) supplierContext += `\n   Email: ${s.contactEmail}`;
+        if (s.contactPhone) supplierContext += `\n   Telefon: ${s.contactPhone}`;
+        if (s.snippet) supplierContext += `\n   Context: ${s.snippet}`;
+        supplierContext += '\n';
+      }
+    }
+
+    // ════════════════════════════════════════════════════════════════════════
+    // STEP 2: AI COMPILES PACKAGE FROM REAL SUPPLIER DATA
+    // AI receives pre-searched suppliers and creates RFQ + emails + brief
+    // ════════════════════════════════════════════════════════════════════════
 
     const prompt = `Ești un expert în achiziții și sourcing B2B din România și internațional.
 
-IMPORTANT: Nu inventezi și nu halucinezi URL-uri sau date de contact. În schimb, pentru fiecare furnizor vei furniza un "productSearchQuery" — interogarea exactă cu care se va căuta pe Google/DuckDuckGo pagina de produs. Sistemul va face el căutarea reală și va găsi URL-ul corect.
+TASK: Compilează un pachet complet de sourcing folosind EXCLUSIV furnizorii reali de mai jos (găsiți prin căutare web automată). NU inventa furnizori noi. NU modifica URL-urile sau datele de contact — folosește exact ce este dat.
+
+${discoveredSuppliers.length > 0
+  ? `Ai la dispoziție ${discoveredSuppliers.length} furnizori reali verificați. Folosește-i pe toți (sau pe cei relevanți).`
+  : `ATENȚIE: Căutarea web nu a găsit furnizori. Încearcă să recomanzi furnizori pe care îi cunoști CU CERTITUDINE (companii reale, verificabile). Dacă nu ești sigur, returnează o listă goală — NU inventa.`
+}
 
 Răspunde DOAR în format JSON valid, fără markdown, fără backticks:
 {
-  "summary": "Rezumat executiv al cererii",
+  "summary": "Rezumat executiv al cererii de sourcing",
   "suppliers": [
     {
-      "name": "Nume Furnizor Real SRL",
-      "website": "https://domeniu-real.ro",
-      "productSearchQuery": "Furnizor SRL produs-specific categorie cumpara pret",
-      "email": "contact@furnizor.ro",
-      "phone": "+40 XXX XXX XXX",
+      "name": "Numele exact al furnizorului",
+      "website": "https://domeniu-exact.ro",
+      "productUrl": "URL-ul exact al paginii de produs (sau gol dacă nu există)",
+      "email": "email-ul exact (sau gol)",
+      "phone": "telefonul exact (sau gol)",
       "country": "România",
-      "notes": "De ce este relevant acest furnizor"
+      "notes": "De ce este relevant acest furnizor pentru această cerere"
     }
   ],
-  "rfq": "Document RFQ complet",
-  "emails": [{"to": "contact@furnizor.ro", "subject": "...", "body": "..."}],
-  "brief": "Brief sourcing markdown"
+  "rfq": "Document RFQ profesional complet (cerere de ofertă formală, cu toate specificațiile tehnice din cererea utilizatorului, cantitate, deadline, condiții de livrare)",
+  "emails": [{"to": "email@furnizor.ro", "subject": "Cerere de ofertă — [produs]", "body": "Email profesional personalizat per furnizor"}],
+  "brief": "Brief sourcing executiv în format markdown"
 }
 
-REGULI STRICTE:
-1. FURNIZORI: Doar companii REALE și VERIFICABILE pe care le cunoști cu certitudine. Trebuie să poți confirma că firma există, are un site funcțional, și vinde efectiv produsul cerut.
-2. INTERZIS: NU include marketplace-uri generice ca furnizori (OLX, Autovit, Publi24, Facebook Marketplace, Alibaba, AliExpress, Made-in-China, DHGate, Temu, Wish). Acestea sunt AGREGATORI, nu furnizori B2B.
-3. INTERZIS: NU include magazine care NU vând tipul de produs cerut (ex: Dedeman/Praktiker/Hornbach/IKEA pentru ATV-uri, motociclete, echipamente sportive specializate, utilaje grele).
-4. INTERZIS: NU inventa nume de firme. Dacă nu cunoști suficienți furnizori reali, returnează mai puțini (chiar și 1-2) dar REALI, decât 6 inventați. ZERO furnizori inventați.
-5. website: Domeniul real al companiei — dacă nu ești 100% sigur că domeniul există, pune ""
-6. productSearchQuery: Interogare specifică de tip "site:domeniu.ro produs exact". NU pune interogări generice.
-7. email/phone: DOAR date de contact reale pe care le cunoști sigur. Dacă nu ești sigur, pune "" — NU inventa numere de telefon sau adrese de email.
-8. NU include câmpuri priceMin/priceMax — prețurile vor fi extrase automat din paginile de produs reale. Nu inventa prețuri.
-9. ZONĂ: Respectă STRICT zona geografică. Dacă zona este "Locală" sau "Regională", NU include furnizori din China sau alte țări care nu pot livra în termenul cerut.${learnings}
-
+REGULI:
+1. Folosește DOAR furnizorii din lista de mai jos — nu adăuga alții decât dacă lista e goală
+2. Păstrează URL-urile EXACT cum sunt — nu le modifica
+3. Dacă un furnizor nu are email/telefon, lasă câmpul gol ("")
+4. RFQ trebuie să fie profesional, formal, cu toate specificațiile tehnice
+5. Emailurile trebuie personalizate per furnizor (menționează produsul specific)
+6. Brief-ul trebuie să rezume cererea și furnizorii într-un format executiv
+7. ZONĂ: ${zoneLabel} — menționează în RFQ și emails${learnings}
+${supplierContext}
 ---
 
 ${userContent}`;
@@ -842,8 +908,59 @@ ${userContent}`;
     // Write individual result file
     await safeWriteJSON(getResultPath(id), processingEntry);
 
-    // Run Claude + web search in background (pipeline orchestrated)
-    runClaude(prompt, { provider }).then(async (raw) => {
+    // Run AI with quality validation — verify websites actually exist before accepting
+    const supplierQualityCheck = async (raw: string): Promise<{ pass: boolean; reason?: string }> => {
+      try {
+        const jsonMatch = raw.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) return { pass: false, reason: 'No JSON in response' };
+        const parsed = JSON.parse(jsonMatch[0]);
+        const suppliers = parsed.suppliers || [];
+        if (suppliers.length === 0) return { pass: false, reason: 'No suppliers returned' };
+
+        // Check supplier names aren't fabricated (generic pattern)
+        const genericNames = suppliers.filter((s: Record<string, string>) =>
+          /^(ATV|Solar|Quad|Energy|Eco|Tech|Motor|Power|Green)\s+(Romania|Center|Distribution|Sport|Shop|Store)\b/i.test(s.name || '') ||
+          /^[A-Z][a-z]+\s+(Romania|București|Bucuresti)\s+SRL$/i.test(s.name || '')
+        ).length;
+        if (genericNames > suppliers.length * 0.5) {
+          return { pass: false, reason: `${genericNames}/${suppliers.length} suppliers have generic/fabricated names` };
+        }
+
+        // Verify at least 50% of websites actually respond (HEAD request)
+        const websiteUrls = suppliers
+          .map((s: Record<string, string>) => s.website)
+          .filter((w: string) => w && /^https?:\/\/.+\..+/.test(w.trim()));
+
+        if (websiteUrls.length === 0) {
+          return { pass: false, reason: 'No suppliers have website URLs' };
+        }
+
+        const verifyResults = await Promise.all(
+          websiteUrls.slice(0, 4).map(async (url: string) => {
+            try {
+              const resp = await fetch(url, {
+                method: 'HEAD',
+                signal: AbortSignal.timeout(5000),
+                redirect: 'follow',
+              });
+              return resp.ok || resp.status === 403 || resp.status === 405;
+            } catch { return false; }
+          })
+        );
+        const verified = verifyResults.filter(Boolean).length;
+        const verifyRatio = verified / websiteUrls.length;
+
+        if (verifyRatio < 0.5) {
+          return { pass: false, reason: `Only ${verified}/${websiteUrls.length} supplier websites respond (${Math.round(verifyRatio * 100)}% — likely hallucinated)` };
+        }
+
+        return { pass: true };
+      } catch {
+        return { pass: false, reason: 'Failed to parse supplier JSON' };
+      }
+    };
+
+    runClaudeWithQualityRetry(prompt, supplierQualityCheck, { provider, maxProviderRetries: 3 }).then(async (raw) => {
       let pipeline = createPipeline(id);
       pipeline = transition(pipeline, EVENTS.START)!;   // idle → generate
       pipeline = transition(pipeline, EVENTS.SUCCESS)!;  // generate → parse
@@ -882,74 +999,61 @@ ${userContent}`;
         }
       }
 
-      // Use Claude CLI with web search to find real product URLs
+      // ── MERGE: Enrich AI result with pre-searched supplier data ──
+      // The AI was given real supplier data — now ensure URLs are preserved correctly
       if (result.suppliers && result.suppliers.length > 0) {
-        console.log(`[Source] Searching product URLs for ${result.suppliers.length} suppliers...`);
-        const urlMap = await findProductUrls(result.suppliers, spec.description);
+        logger.info(`[Source] Enriching ${result.suppliers.length} suppliers with web search data...`);
 
-        // Apply found URLs and verify
-        await Promise.all(result.suppliers.map(async (s, i) => {
-          const found = urlMap[i];
+        // Match AI suppliers back to discovered suppliers by domain/name
+        const matchDiscovered = (aiSupplier: Supplier): DiscoveredSupplier | undefined => {
+          const aiDomain = aiSupplier.website ? extractDomain(aiSupplier.website) : '';
+          const aiName = (aiSupplier.name || '').toLowerCase();
+          return discoveredSuppliers.find(d => {
+            const dDomain = extractDomain(d.website);
+            if (aiDomain && dDomain && aiDomain === dDomain) return true;
+            if (aiName && d.name.toLowerCase().includes(aiName)) return true;
+            if (aiName && aiName.includes(d.name.toLowerCase())) return true;
+            return false;
+          });
+        };
 
-          if (found) {
-            // Update website if Claude found the real one
-            if (found.website && !isHomepageUrl(found.website)) {
-              // found.website should be just the domain — but verify it's not empty
-              s.website = found.website;
-            } else if (found.website) {
-              s.website = found.website;
-            }
+        // Helper to extract domain
+        function extractDomain(url: string): string {
+          try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; }
+        }
 
-            // CRITICAL: Reject productUrl if it's just a homepage
-            if (found.productUrl && !isHomepageUrl(found.productUrl) && normalizeUrl(found.productUrl) !== normalizeUrl(s.website || '')) {
-              // Verify the product URL actually works
-              const ok = await verifyUrl(found.productUrl);
-              if (ok) {
-                s.productUrl = found.productUrl;
-                s.urlVerified = true;
-                s.urlSource = 'searched';
-              } else {
-                // Product URL doesn't work — leave empty, don't fall back to homepage
-                s.productUrl = '';
-                s.urlSource = 'unverified';
-              }
-            } else if (found.productUrl && isHomepageUrl(found.productUrl)) {
-              console.log(`[Source] Rejected homepage as productUrl for ${s.name}: ${found.productUrl}`);
-              s.productUrl = '';
-            }
-          }
+        await Promise.all(result.suppliers.map(async (s) => {
+          const discovered = matchDiscovered(s);
 
-          // If no product URL yet, verify at least the homepage
-          if (!s.productUrl && s.website) {
-            const ok = await verifyUrl(s.website);
-            if (ok) {
+          if (discovered) {
+            // Use verified data from web search — don't trust AI modifications
+            s.website = discovered.website;
+            if (discovered.productUrl && !isHomepageUrl(discovered.productUrl)) {
+              s.productUrl = discovered.productUrl;
               s.urlVerified = true;
-              s.urlSource = 'verified';
-            } else {
-              s.website = '';
-              s.urlVerified = false;
-              s.urlSource = 'unverified';
+              s.urlSource = 'searched';
             }
+            // Use real contact info if AI didn't have it
+            if (!s.email && discovered.contactEmail) s.email = discovered.contactEmail;
+            if (!s.phone && discovered.contactPhone) s.phone = discovered.contactPhone;
           }
 
-          // Extract real price from verified product URL
-          if (s.productUrl && s.urlVerified) {
+          // Extract real price from product URL
+          if (s.productUrl && !isHomepageUrl(s.productUrl)) {
             const realPrice = await fetchProductPrice(s.productUrl);
             if (realPrice) {
               s.priceMin = realPrice.price;
               s.priceMax = realPrice.price;
               s.priceCurrency = realPrice.currency;
               (s as unknown as Record<string, unknown>).priceSource = 'scraped';
-              console.log(`[Source] Real price for ${s.name}: ${realPrice.price} ${realPrice.currency} from ${s.productUrl}`);
+              logger.info(`[Source] Real price for ${s.name}: ${realPrice.price} ${realPrice.currency}`);
             } else {
-              // Could not extract price — clear AI estimates to avoid misleading user
               s.priceMin = undefined;
               s.priceMax = undefined;
               (s as unknown as Record<string, unknown>).priceSource = 'unavailable';
-              console.log(`[Source] Could not extract price for ${s.name} from ${s.productUrl}`);
             }
           } else {
-            // No verified product URL — clear AI-hallucinated prices
+            // No product URL — clear any AI-hallucinated prices
             s.priceMin = undefined;
             s.priceMax = undefined;
             (s as unknown as Record<string, unknown>).priceSource = 'unavailable';
