@@ -55,7 +55,24 @@ export async function safeReadJSON<T>(filePath: string, defaultValue: T): Promis
 }
 
 /**
- * Safe write operation for JSON files with locking
+ * Retry a write operation with exponential backoff
+ */
+async function retryWrite(fn: () => Promise<void>, maxAttempts = 3): Promise<void> {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      await fn();
+      return;
+    } catch (error) {
+      if (attempt === maxAttempts) throw error;
+      const delay = Math.min(100 * Math.pow(2, attempt - 1), 1000);
+      logger.warn(`Write attempt ${attempt}/${maxAttempts} failed, retrying in ${delay}ms`, { error: String(error) });
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+}
+
+/**
+ * Safe write operation for JSON files with locking and retry
  */
 export async function safeWriteJSON<T>(filePath: string, data: T): Promise<void> {
   const lockKey = filePath;
@@ -68,10 +85,10 @@ export async function safeWriteJSON<T>(filePath: string, data: T): Promise<void>
         await mkdir(dir, { recursive: true });
       }
 
-      // Write file
-      await writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+      // Write file with retry
+      await retryWrite(() => writeFile(filePath, JSON.stringify(data, null, 2), 'utf8'));
     } catch (error) {
-      logger.error(`Error writing JSON file`, { filePath, error: String(error) });
+      logger.error(`Error writing JSON file after retries`, { filePath, error: String(error) });
       throw error;
     }
   });
@@ -100,7 +117,7 @@ export async function safeUpdateJSON<T>(
       await mkdir(dir, { recursive: true });
     }
 
-    await writeFile(filePath, JSON.stringify(updated, null, 2), 'utf8');
+    await retryWrite(() => writeFile(filePath, JSON.stringify(updated, null, 2), 'utf8'));
   });
 }
 

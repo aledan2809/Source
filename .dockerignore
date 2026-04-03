@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+*.md
+Reports/
+knowledge/
+nemo/
+dev.log
+.env
+.env.local

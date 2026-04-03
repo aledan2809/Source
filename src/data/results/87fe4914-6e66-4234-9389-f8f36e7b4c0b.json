@@ -1,0 +1,22 @@
+{
+  "id": "87fe4914-6e66-4234-9389-f8f36e7b4c0b",
+  "createdAt": "2026-03-20T16:37:11.194Z",
+  "updatedAt": "2026-03-20T16:37:11.194Z",
+  "spec": {
+    "description": "ATV nou pe benzină pentru adult, 250cc, pentru moto-cross ușor",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "București",
+    "quantity": 1,
+    "unit": "bucăți",
+    "deadline": "1 săptămână",
+    "budgetMin": 2000,
+    "budgetMax": 5000,
+    "currency": "EUR"
+  },
+  "result": null,
+  "status": "processing",
+  "refinements": 0,
+  "satisfied": false
+}

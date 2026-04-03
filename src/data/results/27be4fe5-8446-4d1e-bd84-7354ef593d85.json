@@ -1,0 +1,151 @@
+{
+  "id": "27be4fe5-8446-4d1e-bd84-7354ef593d85",
+  "createdAt": "2026-03-23T12:42:17.568Z",
+  "updatedAt": "2026-03-23T12:42:57.723Z",
+  "spec": {
+    "description": "ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, pentru utilizare recreationala si potential competitional, livrare in Bucuresti",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucuresti",
+    "budgetMin": 2500,
+    "budgetMax": 5500,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucata",
+    "deadline": "ASAP",
+    "summary": "Sourcing ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, livrare in Bucuresti, buget 2500-5500 EUR."
+  },
+  "result": {
+    "summary": "Sourcing ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, livrare in Bucuresti, buget 2500-5500 EUR. Această căutare se concentrează pe dealeri majori din România cu capacitate de livrare în București, oferind mărci și modele care se pot încadra în bugetul și specificațiile tehnice, cum ar fi Linhai, TGB sau Goes.",
+    "suppliers": [
+      {
+        "name": "ATVROM (MotoMus SRL)",
+        "website": "https://www.atvrom.ro",
+        "email": "contact@atvrom.ro",
+        "phone": "+40 735 533 111",
+        "country": "România",
+        "notes": "Unul dintre cei mai mari dealeri de ATV-uri din România, cu o gamă variată de mărci, inclusiv TGB și CFMoto, care pot oferi modele potrivite bugetului și specificațiilor (ex: TGB Blade 200SL, care se încadrează la limita superioară a bugetului, dar este omologat și robust).",
+        "productUrl": "https://www.atvrom.ro/sararite",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 3150,
+        "priceMax": 3150,
+        "priceCurrency": "RON",
+        "priceSource": "scraped",
+        "_searchQuery": "site:atvrom.ro TGB Blade 200SL automat 2WD RAR pret"
+      },
+      {
+        "name": "MotorTeam (B-K-L Motorbike SRL)",
+        "website": "https://www.motorteam.ro",
+        "email": "office@motorteam.ro",
+        "phone": "+40 740 011 328",
+        "country": "România",
+        "notes": "Dealer important cu prezență solidă, oferă mărci precum Linhai și Goes, care sunt cunoscute pentru modelele lor entry-level și mid-range, ce se pot încadra bine în bugetul specificat pentru un ATV nou, omologat și cu transmisie automată (ex: Linhai M150 sau M200).",
+        "urlVerified": true,
+        "urlSource": "verified",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:motorteam.ro Linhai M150 automat 2WD RAR pret"
+      },
+      {
+        "name": "Motoboom (B&B Active Trading SRL)",
+        "website": "https://www.motoboom.ro",
+        "email": "comenzi@motoboom.ro",
+        "phone": "+40 720 008 111",
+        "country": "România",
+        "notes": "Un alt dealer mare pe piața din România, cu o selecție similară de mărci precum Goes, CFMoto, TGB. Reprezintă o sursă alternativă pentru modele similare celor identificate la alți furnizori, sporind șansele de a găsi o ofertă competitivă în buget (ex: Goes 160S, care este un candidat bun).",
+        "productUrl": "https://www.motoboom.ro/livrare",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:motoboom.ro Goes 160 S automat 2WD RAR pret"
+      },
+      {
+        "name": "MOTO GP (Moto GP Power Distribution SRL)",
+        "website": "",
+        "email": "office@motogp.ro",
+        "phone": "+40 722 555 111",
+        "country": "România",
+        "notes": "Dealer cu o experiență considerabilă pe piața de ATV-uri, motociclete și scutere. Oferă diverse mărci, inclusiv Linhai și TGB, cu opțiuni de ATV-uri omologate care ar putea respecta cerințele de buget și specificații, reprezentând o opțiune viabilă pentru achiziție în București.",
+        "urlVerified": false,
+        "urlSource": "unverified",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:motogp.ro Linhai M200 automat 2WD T3b pret"
+      }
+    ],
+    "rfq": "Cerere de Ofertă (RFQ) pentru Achiziție ATV Nou\n\nData: 23 Iulie 2024\n\nCătre: [Nume Furnizor]\nDe la: [Numele dvs. / Compania dvs.]\n\nSubiect: Cerere de Ofertă pentru Achiziție ATV Nou\n\nStimate Furnizor,\n\nDorim să achiziționăm un ATV nou, conform specificațiilor detaliate mai jos. Vă rugăm să ne transmiteți o ofertă detaliată pentru produsul/produsele din portofoliul dumneavoastră care îndeplinesc aceste cerințe.\n\nDetalii Solicitare:\n\n1.  **Tip Achiziție:** Cumpărare\n2.  **Condiție:** Nou\n3.  **Cantitate:** 1 (una) bucată\n4.  **Tip Vehicul:** ATV (All-Terrain Vehicle)\n5.  **Motorizare:** Pe combustie\n6.  **Cilindree minimă:** 125cc (minim 125 centimetri cubi; se acceptă și modele de 150cc, 200cc, etc., dacă se încadrează în buget și alte specificații).\n7.  **Transmisie:** Automată (fără ambreiaj manual)\n8.  **Tracțiune:** 2WD (Two-Wheel Drive) – tracțiune spate\n9.  **Omologare:** Omologat RAR (Registrul Auto Român) pentru circulație pe drumurile publice (clasa T3b sau L7e, sau echivalent, cu posibilitate de înmatriculare).\n10. **Capacitate Portantă:** Minim 130 kg (se referă la greutatea maximă suportată, inclusiv pilot și echipament).\n11. **Utilizare:** Recreațională și cu potențial pentru utilizare competițională ocazională.\n12. **Livrare:** București, România.\n13. **Termen Livrare:** ASAP (cât mai rapid posibil, stoc disponibil sau termen scurt de livrare).\n14. **Buget Maxim OBLIGATORIU:** 2500 - 5500 EUR (TVA inclus, dacă este cazul și permite). Vă rugăm să nu depășiți această limită de preț.\n\nInformații solicitate în ofertă:\n\n*   Modelul/modelele de ATV propuse, cu denumire completă și specificații tehnice detaliate.\n*   Prețul unitar (TVA inclus/exclus, cu menționarea explicită).\n*   Termenul estimat de livrare.\n*   Costuri adiționale (transport, pregătire, etc.), dacă există.\n*   Perioada de garanție și condițiile acesteia.\n*   Disponibilitatea și costurile pentru accesorii esențiale (ex: cască, echipament de protecție – opțional).\n*   Disponibilitatea pentru test drive (dacă este cazul și permiteți).\n\nTermen de Răspuns:\nVă rugăm să ne transmiteți oferta dumneavoastră în termen de [Număr] zile lucrătoare de la data primirii acestei cereri.\n\nContact:\nPentru orice clarificări sau informații suplimentare, vă rugăm să ne contactați la [Adresa dvs. de email] sau [Numărul dvs. de telefon].\n\nVă mulțumim pentru timpul și efortul dumneavoastră și așteptăm cu interes oferta.\n\nCu stimă,\n[Numele dvs. / Compania dvs.]\n[Detalii Contact]",
+    "emails": [
+      {
+        "to": "contact@atvrom.ro",
+        "subject": "RFQ: Achiziție ATV Nou - Minim 125cc, Automat, RAR, Buget Max 5500 EUR",
+        "body": "Stimate Partener,\n\nPrin prezenta, solicităm o ofertă pentru achiziția unui ATV nou, conform specificațiilor detaliate în documentul RFQ atașat. Suntem în căutarea unui ATV pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, pentru utilizare recreațională și potențial competițională, cu livrare în București.\n\nBugetul maxim obligatoriu pentru această achiziție este de 5500 EUR. Vă rugăm să evaluați oferta dumneavoastră în acest interval.\n\nAșteptăm cu interes propunerea dumneavoastră.\n\nCu stimă,\n[Numele dvs. / Compania dvs.]\n[Detalii Contact]"
+      },
+      {
+        "to": "office@motorteam.ro",
+        "subject": "RFQ: Achiziție ATV Nou - Minim 125cc, Automat, RAR, Buget Max 5500 EUR",
+        "body": "Stimate Partener,\n\nPrin prezenta, solicităm o ofertă pentru achiziția unui ATV nou, conform specificațiilor detaliate în documentul RFQ atașat. Suntem în căutarea unui ATV pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, pentru utilizare recreațională și potențial competițională, cu livrare în București.\n\nBugetul maxim obligatoriu pentru această achiziție este de 5500 EUR. Vă rugăm să evaluați oferta dumneavoastră în acest interval.\n\nAșteptăm cu interes propunerea dumneavoastră.\n\nCu stimă,\n[Numele dvs. / Compania dvs.]\n[Detalii Contact]"
+      },
+      {
+        "to": "comenzi@motoboom.ro",
+        "subject": "RFQ: Achiziție ATV Nou - Minim 125cc, Automat, RAR, Buget Max 5500 EUR",
+        "body": "Stimate Partener,\n\nPrin prezenta, solicităm o ofertă pentru achiziția unui ATV nou, conform specificațiilor detaliate în documentul RFQ atașat. Suntem în căutarea unui ATV pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, pentru utilizare recreațională și potențial competițională, cu livrare în București.\n\nBugetul maxim obligatoriu pentru această achiziție este de 5500 EUR. Vă rugăm să evaluați oferta dumneavoastră în acest interval.\n\nAșteptăm cu interes propunerea dumneavoastră.\n\nCu stimă,\n[Numele dvs. / Compania dvs.]\n[Detalii Contact]"
+      },
+      {
+        "to": "office@motogp.ro",
+        "subject": "RFQ: Achiziție ATV Nou - Minim 125cc, Automat, RAR, Buget Max 5500 EUR",
+        "body": "Stimate Partener,\n\nPrin prezenta, solicităm o ofertă pentru achiziția unui ATV nou, conform specificațiilor detaliate în documentul RFQ atașat. Suntem în căutarea unui ATV pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, pentru utilizare recreațională și potențial competițională, cu livrare în București.\n\nBugetul maxim obligatoriu pentru această achiziție este de 5500 EUR. Vă rugăm să evaluați oferta dumneavoastră în acest interval.\n\nAșteptăm cu interes propunerea dumneavoastră.\n\nCu stimă,\n[Numele dvs. / Compania dvs.]\n[Detalii Contact]"
+      }
+    ],
+    "brief": "### Brief Sourcing ATV Nou\n\n**Descriere:** Achiziție 1 bucată ATV nou, pe combustie, cu specificații minime de 125cc, transmisie automată și tracțiune 2WD.\n\n**Cerințe Esențiale:**\n*   **Omologare:** Obligatoriu RAR, pentru circulație pe drumurile publice (T3b sau L7e).\n*   **Capacitate Portantă:** Minim 130 kg.\n*   **Utilizare:** Recreațională și, potențial, competițională.\n*   **Locație Livrare:** București, România.\n*   **Termen:** ASAP.\n\n**Buget:** **2500 - 5500 EUR** (maxim obligatoriu). Este crucial ca ofertele să se încadreze strict în acest buget.\n\n**Considerații:** Deși cerința este de minim 125cc, modelele omologate care îndeplinesc și capacitatea portantă de 130 kg sunt adesea în gama 150-200cc, care se încadrează în specificație și buget. Furnizorii vizați sunt dealeri majori din România cu prezență sau capabilități de livrare în București."
+  },
+  "status": "pending_validation",
+  "refinements": 0,
+  "satisfied": false,
+  "pipeline": {
+    "qualityScore": 79,
+    "qualityDecision": "pass",
+    "qualityBreakdown": {
+      "base": 20,
+      "urlScore": 19,
+      "priceScore": 5,
+      "contactScore": 15,
+      "guardrailsScore": 20
+    },
+    "stages": [
+      {
+        "stage": "idle",
+        "event": "start",
+        "timestamp": "2026-03-23T12:42:51.924Z"
+      },
+      {
+        "stage": "generate",
+        "event": "success",
+        "timestamp": "2026-03-23T12:42:51.924Z"
+      },
+      {
+        "stage": "parse",
+        "event": "success",
+        "timestamp": "2026-03-23T12:42:51.924Z"
+      },
+      {
+        "stage": "guardrails",
+        "event": "success",
+        "timestamp": "2026-03-23T12:42:57.722Z"
+      },
+      {
+        "stage": "verify",
+        "event": "success",
+        "timestamp": "2026-03-23T12:42:57.722Z"
+      },
+      {
+        "stage": "quality",
+        "event": "success",
+        "timestamp": "2026-03-23T12:42:57.722Z"
+      }
+    ],
+    "guardrailsEngine": "nemo",
+    "supplierCount": 4,
+    "verifiedCount": 3,
+    "pricesScraped": 1
+  }
+}

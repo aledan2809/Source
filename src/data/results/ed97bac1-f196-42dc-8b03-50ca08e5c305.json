@@ -1,0 +1,24 @@
+{
+  "id": "ed97bac1-f196-42dc-8b03-50ca08e5c305",
+  "createdAt": "2026-03-23T12:27:10.243Z",
+  "updatedAt": "2026-03-23T12:27:10.528Z",
+  "spec": {
+    "description": "ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta p�na la 130 kg, pentru utilizare recrea?ionala ?i poten?ial competi?ional, livrare �n Bucure?ti",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucure?ti",
+    "budgetMin": 2500,
+    "budgetMax": 5500,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucata",
+    "deadline": "ASAP",
+    "summary": "Sourcing ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta p�na la 130 kg, pentru utilizare recrea?ionala ?i poten?ial competi?ional, livrare �n Bucure?ti, buget 2.500�5.500 EUR, 1 bucata, termen ASAP."
+  },
+  "result": null,
+  "status": "error",
+  "refinements": 0,
+  "satisfied": false,
+  "error": "All AI providers failed: Anthropic API: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_i | Claude CLI: claude CLI not installed | Gemini API: no GEMINI_API_KEY"
+}

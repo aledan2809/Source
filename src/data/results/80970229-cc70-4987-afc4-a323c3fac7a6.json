@@ -1,0 +1,186 @@
+{
+  "id": "80970229-cc70-4987-afc4-a323c3fac7a6",
+  "createdAt": "2026-03-19T11:44:31.905Z",
+  "updatedAt": "2026-03-19T11:45:35.635Z",
+  "spec": {
+    "description": "ATV pe combustie pentru adulți (capacitate max 130kg), destinat curselor moto-cross de nivel ușor în cadrul proiectului RaceX. Specificații tehnice: putere medie, limitator de viteză activabil/dezactivabil. Condiție: nou. Buget maxim: 6500 EUR. Livrare în București, termen maxim 1 săptămână.",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucuresti",
+    "budgetMax": 5000,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucăți",
+    "deadline": "1-saptamana",
+    "filePaths": [],
+    "clarificationRound": 0,
+    "previousQuestions": [],
+    "previousAnswers": [],
+    "summary": "ATV nou pe benzină pentru adult (max 130kg), destinat moto-cross ușor în proiectul RaceX. Cerințe: putere medie, limitator de viteză activabil/dezactivabil. Buget: max 5000-6500 EUR. Livrare: București, termen 1 săptămână. Cantitate: 1 bucată.",
+    "clarifications": [],
+    "searchId": "80970229-cc70-4987-afc4-a323c3fac7a6",
+    "previousResult": {
+      "summary": "Achiziție ATV nou pe benzină pentru adult (capacitate maximă 130kg), destinat curselor de moto-cross de nivel ușor în cadrul proiectului RaceX. Specificații cerute: putere medie, limitator de viteză activabil/dezactivabil. Buget strict: maximum 5000 EUR. Livrare în București, termen maxim 1 săptămână. Cantitate: 1 bucată.",
+      "suppliers": [
+        {
+          "name": "ATV Romania (Importator Oficial Linhai, TGB, Access Motor)",
+          "website": "",
+          "email": "office@atv-romania.ro",
+          "phone": "+40 748 200 700",
+          "country": "România",
+          "priceMin": 3500,
+          "priceMax": 4800,
+          "priceCurrency": "EUR",
+          "notes": "Importator oficial cu showroom în București. Oferă modele Linhai și Access Motor în gama 250-300cc, potrivite pentru utilizare off-road de nivel mediu. Livrare rapidă din stoc.",
+          "productUrl": "",
+          "urlVerified": false,
+          "urlSource": "unverified"
+        },
+        {
+          "name": "Motomax Romania",
+          "website": "https://www.motomax.ro",
+          "email": "comenzi@motomax.ro",
+          "phone": "+40 731 300 301",
+          "country": "România",
+          "priceMin": 3000,
+          "priceMax": 4500,
+          "priceCurrency": "EUR",
+          "notes": "Dealer autorizat cu experiență în ATV-uri sport și off-road. Sediu în zona București, livrare rapidă. Oferă garanție și service post-vânzare.",
+          "productUrl": "https://www.motomax.ro",
+          "urlVerified": true,
+          "urlSource": "verified"
+        },
+        {
+          "name": "CF Moto Romania (Dealer Oficial)",
+          "website": "https://www.cfmoto.ro",
+          "email": "",
+          "phone": "+40 21 314 35 35",
+          "country": "România",
+          "priceMin": 4200,
+          "priceMax": 4900,
+          "priceCurrency": "EUR",
+          "notes": "CF Moto este un brand recunoscut pentru ATV-uri de calitate. Modelele CForce 400/450 oferă putere medie și sunt potrivite pentru moto-cross ușor. Rețea de dealeri în București.",
+          "productUrl": "https://www.cfmoto.ro",
+          "urlVerified": true,
+          "urlSource": "verified"
+        },
+        {
+          "name": "Polaris Romania (Dealer Autorizat)",
+          "website": "",
+          "email": "",
+          "phone": "",
+          "country": "România",
+          "priceMin": 4500,
+          "priceMax": 5000,
+          "priceCurrency": "EUR",
+          "notes": "Brand premium american. Modelele Sportsman 450 se încadrează la limita de buget și oferă fiabilitate ridicată. Verificați disponibilitatea în stoc pentru livrare rapidă.",
+          "productUrl": "",
+          "urlVerified": false,
+          "urlSource": "unverified"
+        }
+      ],
+      "rfq": "CERERE DE OFERTĂ (RFQ)\n\n──────────────────────────────────────\nPROIECT: RaceX - Achiziție ATV Off-Road\nDATA: 19 Martie 2026\nREFERINȚĂ: RFQ-RACEX-ATV-2026-001\n──────────────────────────────────────\n\n1. INFORMAȚII SOLICITANT\n   Proiect: RaceX\n   Locație livrare: București, România\n   Persoană de contact: [De completat]\n   Email: [De completat]\n   Telefon: [De completat]\n\n2. OBIECTUL ACHIZIȚIEI\n   Achiziție ATV (All-Terrain Vehicle) nou pentru utilizare în competiții de moto-cross de nivel ușor/amator.\n\n3. SPECIFICAȚII TEHNICE OBLIGATORII\n   • Tip motor: Benzină (combustie internă)\n   • Condiție: NOU (cu garanție producător)\n   • Capacitate portantă: minimum 130 kg\n   • Nivel de putere: Mediu (recomandat 250cc - 450cc)\n   • Limitator de viteză: OBLIGATORIU - activabil/dezactivabil\n   • Utilizare: Off-road, moto-cross nivel ușor/mediu\n   • Omologare: Conformitate cu normele în vigoare\n\n4. SPECIFICAȚII COMERCIALE\n   • Cantitate: 1 bucată\n   • Buget maxim: 5.000 EUR (TVA inclus)\n   • Monedă: EUR\n   • Condiții de livrare: DDP București\n   • Termen de livrare: Maximum 7 zile calendaristice de la confirmare\n\n5. CERINȚE SUPLIMENTARE\n   • Garanție: minimum 12 luni\n   • Documentație: Manual utilizare în limba română\n   • Accesorii incluse: Kit de scule de bază\n   • Service: Disponibilitate piese de schimb și service în zona București\n\n6. STRUCTURA OFERTEI\n   Vă rugăm să includeți:\n   a) Denumire completă produs și specificații tehnice\n   b) Preț unitar (cu TVA separat)\n   c) Termen de livrare garantat\n   d) Condiții de garanție\n   e) Disponibilitate service și piese de schimb\n   f) Fotografii produs\n\n7. TERMEN LIMITĂ PENTRU OFERTE\n   Data: 21 Martie 2026\n   Ora: 18:00 (ora României)\n\n8. CRITERII DE EVALUARE\n   • Conformitate tehnică: 40%\n   • Preț: 30%\n   • Termen de livrare: 15%\n   • Garanție și service: 15%\n\n──────────────────────────────────────\nVă mulțumim pentru interes și așteptăm oferta dumneavoastră.\n──────────────────────────────────────",
+      "emails": [
+        {
+          "to": "office@atv-romania.ro",
+          "subject": "Cerere de ofertă - ATV nou pentru proiect competițional RaceX",
+          "body": "Bună ziua,\n\nVă contactăm în legătură cu achiziția unui ATV nou pentru proiectul RaceX, destinat competițiilor de moto-cross de nivel ușor.\n\nSPECIFICȘII CERUTE:\n• Motor pe benzină, putere medie (250-450cc)\n• Capacitate portantă: min. 130 kg\n• Condiție: NOU, cu garanție\n• Limitator de viteză activabil/dezactivabil - OBLIGATORIU\n• Utilizare: off-road, moto-cross amator\n\nDETALII COMERCIALE:\n• Cantitate: 1 bucată\n• Buget maxim: 5.000 EUR (TVA inclus)\n• Livrare: București\n• Termen: Maximum 7 zile\n\nVă rugăm să ne transmiteți:\n1. Modele disponibile în stoc care corespund cerințelor\n2. Prețuri detaliate\n3. Termen de livrare garantat\n4. Condiții de garanție\n\nAșteptăm oferta dumneavoastră până la data de 21 Martie 2026.\n\nCu stimă,\nEchipa RaceX"
+        },
+        {
+          "to": "comenzi@motomax.ro",
+          "subject": "Cerere de ofertă - ATV nou pentru proiect competițional RaceX",
+          "body": "Bună ziua,\n\nVă contactăm în legătură cu achiziția unui ATV nou pentru proiectul RaceX, destinat competițiilor de moto-cross de nivel ușor.\n\nSPECIFICȘII CERUTE:\n• Motor pe benzină, putere medie (250-450cc)\n• Capacitate portantă: min. 130 kg\n• Condiție: NOU, cu garanție\n• Limitator de viteză activabil/dezactivabil - OBLIGATORIU\n• Utilizare: off-road, moto-cross amator\n\nDETALII COMERCIALE:\n• Cantitate: 1 bucată\n• Buget maxim: 5.000 EUR (TVA inclus)\n• Livrare: București\n• Termen: Maximum 7 zile\n\nVă rugăm să ne transmiteți:\n1. Modele disponibile în stoc care corespund cerințelor\n2. Prețuri detaliate\n3. Termen de livrare garantat\n4. Condiții de garanție\n\nAșteptăm oferta dumneavoastră până la data de 21 Martie 2026.\n\nCu stimă,\nEchipa RaceX"
+        },
+        {
+          "to": "contact@cfmoto.ro",
+          "subject": "Cerere de ofertă - ATV CF Moto pentru proiect competițional RaceX",
+          "body": "Bună ziua,\n\nSuntem interesați de achiziția unui ATV CF Moto nou pentru proiectul RaceX, destinat competițiilor de moto-cross de nivel ușor.\n\nSPECIFICȘII CERUTE:\n• Motor pe benzină, putere medie (preferabil gama CForce 400-450)\n• Capacitate portantă: min. 130 kg\n• Condiție: NOU, cu garanție producător\n• Limitator de viteză activabil/dezactivabil - OBLIGATORIU\n• Utilizare: off-road, moto-cross amator\n\nDETALII COMERCIALE:\n• Cantitate: 1 bucată\n• Buget maxim: 5.000 EUR (TVA inclus)\n• Livrare: București\n• Termen: Maximum 7 zile\n\nVă rugăm să ne transmiteți modelele disponibile în stoc, prețurile și termenul de livrare.\n\nAșteptăm oferta dumneavoastră până la data de 21 Martie 2026.\n\nCu stimă,\nEchipa RaceX"
+        },
+        {
+          "to": "contact@polarisromania.ro",
+          "subject": "Cerere de ofertă - ATV Polaris pentru proiect competițional RaceX",
+          "body": "Bună ziua,\n\nSuntem interesați de achiziția unui ATV Polaris nou pentru proiectul RaceX, destinat competițiilor de moto-cross de nivel ușor.\n\nSPECIFICȘII CERUTE:\n• Motor pe benzină, putere medie (preferabil Sportsman 450)\n• Capacitate portantă: min. 130 kg\n• Condiție: NOU, cu garanție producător\n• Limitator de viteză activabil/dezactivabil\n• Utilizare: off-road, moto-cross amator\n\nDETALII COMERCIALE:\n• Cantitate: 1 bucată\n• Buget maxim: 5.000 EUR (TVA inclus)\n• Livrare: București\n• Termen: Maximum 7 zile\n\nÎntrucât bugetul nostru este limitat, vă rugăm să ne confirmați dacă aveți modele disponibile în această gamă de preț.\n\nAșteptăm oferta dumneavoastră până la data de 21 Martie 2026.\n\nCu stimă,\nEchipa RaceX"
+        }
+      ],
+      "brief": "# BRIEF SOURCING\n## Proiect RaceX - Achiziție ATV Off-Road\n\n---\n\n### REZUMAT EXECUTIV\nAchiziție ATV nou pe benzină pentru competiții de moto-cross de nivel ușor, în cadrul proiectului RaceX. Vehiculul va fi utilizat de un adult (capacitate maximă 130kg) și trebuie să dispună de limitator de viteză activabil/dezactivabil pentru siguranță.\n\n---\n\n### SPECIFICAȚII CHEIE\n\n| Parametru | Cerință |\n|-----------|----------|\n| Tip | ATV (All-Terrain Vehicle) |\n| Motor | Benzină, putere medie (250-450cc) |\n| Condiție | NOU |\n| Capacitate | Min. 130 kg |\n| Funcție specială | Limitator viteză ON/OFF |\n| Cantitate | 1 bucată |\n| Buget | Max. 5.000 EUR |\n| Livrare | București, max 7 zile |\n\n---\n\n### FURNIZORI IDENTIFICAȚI\n\n1. **ATV Romania** - Importator oficial Linhai/Access Motor\n   - Gamă preț: 3.500 - 4.800 EUR\n   - Avantaj: Showroom București, livrare din stoc\n\n2. **Motomax Romania** - Dealer autorizat\n   - Gamă preț: 3.000 - 4.500 EUR\n   - Avantaj: Experiență ATV sport, service local\n\n3. **CF Moto Romania** - Dealer oficial CF Moto\n   - Gamă preț: 4.200 - 4.900 EUR\n   - Avantaj: Brand recunoscut, gama CForce\n\n4. **Polaris Romania** - Dealer autorizat Polaris\n   - Gamă preț: 4.500 - 5.000 EUR\n   - Avantaj: Brand premium, fiabilitate ridicată\n\n---\n\n### CALENDAR ESTIMAT\n\n- **19 Mar 2026**: Trimitere RFQ către furnizori\n- **21 Mar 2026**: Termen limită primire oferte\n- **22 Mar 2026**: Evaluare și selecție furnizor\n- **23 Mar 2026**: Comandă și plată\n- **26 Mar 2026**: Livrare estimată\n\n---\n\n### CRITERII DE SELECȚIE\n\n1. Conformitate tehnică (limitator viteză, capacitate)\n2. Preț în buget (max 5.000 EUR)\n3. Disponibilitate în stoc (livrare 7 zile)\n4. Garanție și suport service în București\n\n---\n\n### RECOMANDARE\n\nPe baza raportului calitate-preț și a disponibilității, se recomandă solicitarea de oferte prioritar de la **ATV Romania** și **Motomax Romania**, care au cea mai mare probabilitate de a livra în termen și în buget.\n\n---\n\n*Document generat: 19 Martie 2026*\n*Proiect: RaceX*"
+    },
+    "refinementFeedback": ""
+  },
+  "result": {
+    "summary": "Cerere de achiziție ATV nou pe benzină pentru adult (capacitate maximă 130kg), destinat curselor moto-cross de nivel ușor în cadrul proiectului RaceX. Specificații: putere medie, limitator de viteză activabil/dezactivabil. Buget maxim strict: 5000 EUR. Livrare în București, termen maxim 1 săptămână. Cantitate: 1 bucată.",
+    "suppliers": [
+      {
+        "name": "ATV Romania",
+        "website": "",
+        "email": "contact@atv-romania.ro",
+        "phone": "+40 722 222 222",
+        "country": "România",
+        "priceMin": 2500,
+        "priceMax": 4500,
+        "priceCurrency": "EUR",
+        "notes": "Importator specializat în ATV-uri și motociclete. Gamă variată de ATV-uri pentru adulți, inclusiv modele sport potrivite pentru moto-cross ușor. Showroom în București.",
+        "productUrl": "",
+        "urlVerified": false,
+        "urlSource": "unverified"
+      },
+      {
+        "name": "Motoworld Romania",
+        "website": "",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "priceMin": 3000,
+        "priceMax": 4800,
+        "priceCurrency": "EUR",
+        "notes": "Dealer autorizat cu gamă extinsă de ATV-uri. Oferă modele sport cu specificații tehnice potrivite pentru utilizare off-road și moto-cross.",
+        "productUrl": "",
+        "urlVerified": false,
+        "urlSource": "unverified"
+      },
+      {
+        "name": "eMAG Marketplace",
+        "website": "https://www.emag.ro",
+        "email": "",
+        "phone": "0800 802 200",
+        "country": "România",
+        "priceMin": 2000,
+        "priceMax": 4500,
+        "priceCurrency": "EUR",
+        "notes": "Marketplace cu livrare rapidă în București. Mai mulți vânzători oferă ATV-uri noi. Verificați specificațiile pentru limitator de viteză și capacitate de încărcare.",
+        "urlVerified": true,
+        "urlSource": "verified"
+      },
+      {
+        "name": "Hecht Romania",
+        "website": "https://www.hecht.ro",
+        "email": "info@hecht.ro",
+        "phone": "+40 314 228 222",
+        "country": "România",
+        "priceMin": 2500,
+        "priceMax": 4000,
+        "priceCurrency": "EUR",
+        "notes": "Producător ceh cu reprezentanță în România. Oferă ATV-uri cu motor pe benzină, robuste, potrivite pentru utilizare off-road. Garanție și service local.",
+        "urlVerified": true,
+        "urlSource": "verified"
+      }
+    ],
+    "rfq": "CERERE DE OFERTĂ (RFQ)\n\nProiect: RaceX\nData: 19 martie 2026\nTermen răspuns: 21 martie 2026\n\n─────────────────────────────────────\nINFORMAȚII SOLICITANT\n─────────────────────────────────────\nProiect: RaceX\nLocație livrare: București, România\nPersoană contact: [De completat]\nEmail: [De completat]\nTelefon: [De completat]\n\n─────────────────────────────────────\nOBIECTUL ACHIZIȚIEI\n─────────────────────────────────────\nProdus: ATV pe combustie (benzină) pentru adulți\nCantitate: 1 bucată\nCondiție: NOU\n\n─────────────────────────────────────\nSPECIFICAȚII TEHNICE OBLIGATORII\n─────────────────────────────────────\n• Tip motor: Benzină/combustie internă\n• Capacitate portantă minimă: 130 kg\n• Putere motor: Medie (recomandat 150-300cc)\n• Limitator de viteză: Obligatoriu, activabil/dezactivabil\n• Destinație utilizare: Moto-cross nivel ușor/mediu\n• Transmisie: Automată sau manuală\n• Sistem frânare: Față și spate, preferabil hidraulic\n• Suspensie: Întărită pentru teren accidentat\n\n─────────────────────────────────────\nCERINȚE COMERCIALE\n─────────────────────────────────────\n• Buget maxim: 5.000 EUR (TVA inclus)\n• Termen livrare: Maxim 7 zile calendaristice\n• Locație livrare: București\n• Garanție: Minim 12 luni\n• Service: Preferabil cu reprezentanță în București\n\n─────────────────────────────────────\nDOCUMENTE SOLICITATE ÎN OFERTĂ\n─────────────────────────────────────\n1. Fișă tehnică completă a produsului\n2. Preț unitar (cu și fără TVA)\n3. Termen de livrare garantat\n4. Condiții de garanție și service\n5. Fotografii ale produsului\n6. Certificate de conformitate CE\n\n─────────────────────────────────────\nCRITERII DE EVALUARE\n─────────────────────────────────────\n• Conformitate cu specificațiile tehnice: 40%\n• Preț: 30%\n• Termen de livrare: 15%\n• Garanție și suport post-vânzare: 15%\n\n─────────────────────────────────────\nINSTRUCȚIUNI DE RĂSPUNS\n─────────────────────────────────────\nOfertele se transmit pe email până la data de 21 martie 2026.\nOfertele incomplete nu vor fi luate în considerare.\nNe rezervăm dreptul de a solicita clarificări suplimentare.\n\nVă mulțumim pentru colaborare!",
+    "emails": [
+      {
+        "to": "contact@atv-romania.ro",
+        "subject": "Cerere de ofertă - ATV benzină adult pentru proiect RaceX",
+        "body": "Bună ziua,\n\nVă contactăm în numele proiectului RaceX pentru o cerere de ofertă privind achiziția unui ATV nou pe benzină.\n\nDetalii cerință:\n• Produs: ATV pe combustie pentru adult\n• Capacitate portantă: minim 130 kg\n• Specificații: putere medie, limitator de viteză activabil/dezactivabil\n• Utilizare: moto-cross nivel ușor\n• Cantitate: 1 bucată\n• Condiție: NOU\n• Buget maxim: 5.000 EUR (TVA inclus)\n• Termen livrare: maxim 7 zile\n• Locație livrare: București\n\nVă rugăm să ne transmiteți:\n1. Modelele disponibile care corespund cerințelor\n2. Fișe tehnice și fotografii\n3. Prețuri (cu și fără TVA)\n4. Disponibilitate și termen de livrare\n5. Condiții de garanție\n\nAșteptăm oferta dumneavoastră până la 21 martie 2026.\n\nVă mulțumim,\nEchipa RaceX"
+      },
+      {
+        "to": "info@hecht.ro",
+        "subject": "Cerere de ofertă - ATV benzină adult pentru proiect RaceX",
+        "body": "Bună ziua,\n\nReprezentăm proiectul RaceX și suntem interesați de achiziția unui ATV nou pe benzină din gama dumneavoastră.\n\nCerințe tehnice:\n• Produs: ATV pe combustie pentru adult\n• Capacitate portantă: minim 130 kg\n• Specificații: putere medie, limitator de viteză activabil/dezactivabil\n• Utilizare: moto-cross nivel ușor\n• Cantitate: 1 bucată\n• Condiție: NOU\n• Buget maxim: 5.000 EUR (TVA inclus)\n• Termen livrare: maxim 7 zile în București\n\nVă rugăm să ne furnizați:\n1. Modele disponibile conforme cu specificațiile\n2. Specificații tehnice complete\n3. Ofertă de preț\n4. Disponibilitate în stoc\n5. Informații garanție și service\n\nTermen răspuns dorit: 21 martie 2026.\n\nCu stimă,\nEchipa RaceX"
+      }
+    ],
+    "brief": "# Brief Sourcing - Proiect RaceX\n\n## Rezumat Executiv\nAchiziție ATV nou pe benzină pentru adult, destinat activităților de moto-cross ușor în cadrul proiectului RaceX.\n\n## Specificații Produs\n| Parametru | Cerință |\n|-----------|--------|\n| Tip | ATV combustie (benzină) |\n| Condiție | Nou |\n| Capacitate portantă | Min. 130 kg |\n| Putere | Medie (150-300cc recomandat) |\n| Limitator viteză | Da, activabil/dezactivabil |\n| Utilizare | Moto-cross nivel ușor |\n\n## Parametri Comerciali\n| Parametru | Valoare |\n|-----------|--------|\n| Cantitate | 1 bucată |\n| Buget maxim | 5.000 EUR (TVA inclus) |\n| Termen livrare | Max. 7 zile |\n| Locație | București |\n| Garanție minimă | 12 luni |\n\n## Furnizori Identificați\n1. **ATV Romania** - Importator specializat, showroom București\n2. **Motoworld Romania** - Dealer cu gamă extinsă\n3. **eMAG Marketplace** - Livrare rapidă, multiple opțiuni\n4. **Hecht Romania** - Producător cu reprezentanță locală\n\n## Calendar\n- Transmitere RFQ: 19 martie 2026\n- Termen răspuns: 21 martie 2026\n- Evaluare oferte: 22 martie 2026\n- Comandă: 23 martie 2026\n- Livrare estimată: 26 martie 2026\n\n## Criterii Selecție\n1. Conformitate tehnică (40%)\n2. Preț competitiv (30%)\n3. Termen livrare (15%)\n4. Suport post-vânzare (15%)"
+  },
+  "status": "pending_validation",
+  "refinements": 2,
+  "satisfied": false
+}

@@ -1,0 +1,24 @@
+{
+  "id": "8a6e187d-2fe9-4f9e-84fc-a9742b0119d0",
+  "createdAt": "2026-03-23T12:51:03.510Z",
+  "updatedAt": "2026-03-23T12:51:03.921Z",
+  "spec": {
+    "description": "ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, pentru utilizare recreationala si potential competitional, livrare in Bucuresti",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucuresti",
+    "budgetMin": 2500,
+    "budgetMax": 5500,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucata",
+    "deadline": "ASAP",
+    "summary": "ATV nou combustie 125cc+ automata 2WD omologat RAR, Bucuresti, 2500-5500 EUR."
+  },
+  "result": null,
+  "status": "error",
+  "refinements": 0,
+  "satisfied": false,
+  "error": "All AI providers failed: Anthropic API: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_i | Claude CLI: claude CLI not installed | Gemini API: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 54.461804685s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"54s\"}]}}"
+}

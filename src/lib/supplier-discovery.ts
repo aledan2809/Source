@@ -135,7 +135,7 @@ async function searchDDG(query: string): Promise<Array<{ url: string; title: str
       const uddgMatch = block.match(/uddg=([^&"]+)/);
       if (!uddgMatch) continue;
 
-      let url = decodeURIComponent(uddgMatch[1]);
+      const url = decodeURIComponent(uddgMatch[1]);
       if (!url.startsWith('http')) continue;
 
       // Extract title
@@ -523,7 +523,7 @@ IMPORTANT: Mai bine 5 domenii REALE decât 20 inventate. Voi verifica fiecare do
         const wwwWebsite = `https://www.${domain}`;
 
         // Verify the website responds
-        let works = await verifyUrl(website);
+        const works = await verifyUrl(website);
         const finalUrl = works ? website : (await verifyUrl(wwwWebsite) ? wwwWebsite : '');
 
         if (!finalUrl) {

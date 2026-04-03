@@ -1,0 +1,141 @@
+{
+  "id": "22d92ac9-8720-492f-88b7-ae9e96c67687",
+  "createdAt": "2026-03-23T12:55:07.764Z",
+  "updatedAt": "2026-03-23T12:56:49.308Z",
+  "spec": {
+    "description": "ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, pentru utilizare recreationala si potential competitional, livrare in Bucuresti",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucuresti",
+    "budgetMin": 2500,
+    "budgetMax": 5500,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucata",
+    "deadline": "ASAP",
+    "summary": "ATV nou combustie 125cc+ automata 2WD omologat RAR, Bucuresti, 2500-5500 EUR."
+  },
+  "result": {
+    "summary": "Căutare ATV nou pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, capacitate portantă până la 130 kg, uz recreațional și competițional, livrare București. Buget: 2.500–5.500 EUR. Se vizează dealeri autorizați cu stoc disponibil și posibilitate de omologare RAR inclusă sau asistată.",
+    "suppliers": [
+      {
+        "name": "Aquila Group SRL (Dealer Yamaha România)",
+        "website": "https://www.aquila.ro",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "notes": "Importator și distribuitor oficial Yamaha în România. Rețea de dealeri în București. Yamaha YFM (Grizzly/Kodiak) dispune de modele automate 2WD; verificați disponibilitatea omologării RAR prin dealer.",
+        "urlVerified": true,
+        "urlSource": "verified",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:aquila.ro ATV Yamaha Grizzly Kodiak 125cc omologat RAR cumpara"
+      },
+      {
+        "name": "CF Moto România — dealer autorizat București",
+        "website": "https://www.cfmoto.ro",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "notes": "CF Moto oferă ATV-uri noi cu transmisie automată în gama 125–250cc la prețuri competitive (sub 4.000 EUR). Modelele CF Moto CForce sunt frecvent omologate RAR prin rețeaua de dealeri din România. Verificați dealer-ul cel mai apropiat din București pe site-ul oficial.",
+        "productUrl": "https://www.cfmoto.ro/atv/filter/categorie-permis-b",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 3463,
+        "priceMax": 3463,
+        "priceCurrency": "RON",
+        "priceSource": "scraped",
+        "_searchQuery": "cfmoto.ro ATV 125 200 250 automat 2WD omologat RAR Bucuresti dealer"
+      },
+      {
+        "name": "Kymco România — dealer autorizat",
+        "website": "https://www.kymco.ro",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "notes": "Kymco este brand taiwanez cu distribuție oficială în România. Modele MXU/UXV cu transmisie automată CVT, 2WD, destinate uzului recreațional și potențial omologabile RAR. Rețea de service în București.",
+        "urlVerified": true,
+        "urlSource": "verified",
+        "priceSource": "unavailable",
+        "_searchQuery": "kymco.ro ATV MXU UXV 125 300 automat 2WD omologat RAR Bucuresti nou"
+      },
+      {
+        "name": "TGB România — dealer / distribuitor",
+        "website": "",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "notes": "TGB (Taiwan Golden Bee) are distribuție în România și oferă ATV-uri cu transmisie automată în gama 250–325cc, cu posibilitate de omologare RAR. Prețuri în intervalul bugetar 2.500–4.500 EUR.",
+        "urlVerified": false,
+        "urlSource": "unverified",
+        "priceSource": "unavailable",
+        "_searchQuery": "tgb-atv.ro ATV Blade 250 325 automat 2WD omologat RAR nou Bucuresti"
+      },
+      {
+        "name": "Access Motor România — dealer autorizat",
+        "website": "",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "notes": "Access Motor este brand european (produs în Macedonia) cu distribuție în România. ATV-urile Access (Shade/Outrun) sunt cunoscute pentru omologare RAR inclusă și transmisie automată CVT. Se încadrează bine în buget.",
+        "urlVerified": false,
+        "urlSource": "unverified",
+        "priceSource": "unavailable",
+        "_searchQuery": "accessmotor.ro ATV Access 300 400 automat 2WD omologat RAR nou cumpara"
+      }
+    ],
+    "rfq": "REQUEST FOR QUOTATION (RFQ)\n\nData: 23 Martie 2026\nReferință: RFQ-ATV-2026-0323\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nDATE CUMPĂRĂTOR\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nNume / Companie: [COMPLETAȚI]\nAdresă: București, România\nContact: [COMPLETAȚI]\nEmail: [COMPLETAȚI]\nTelefon: [COMPLETAȚI]\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nOBIECTUL ACHIZIȚIEI\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nProdus: ATV (All-Terrain Vehicle) — NOU\nCantitate: 1 (una) bucată\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSPECIFICAȚII TEHNICE OBLIGATORII\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n1. Motor: Combustie internă (benzină), cilindree MINIMĂ 125cc\n2. Transmisie: AUTOMATĂ (CVT sau similar) — condiție eliminatorie\n3. Tracțiune: 2WD (două roți motrice)\n4. Stare: NOU, an fabricație 2024 sau 2025\n5. Omologare: OMOLOGAT RAR (înmatriculabil în România) — condiție eliminatorie\n6. Capacitate portantă: MINIMUM 130 kg\n7. Destinație utilizare: Recreațional și potențial competițional\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nCONDIȚII COMERCIALE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n- Buget maxim: 5.500 EUR (inclusiv TVA)\n- Buget minim estimat: 2.500 EUR\n- Monedă ofertă: EUR sau RON (cu echivalent EUR)\n- Livrare: București — la showroom sau la adresă\n- Termen livrare: ASAP (prioritate maximă pentru stoc disponibil imediat)\n- Modalitate plată: Transfer bancar / card / rate (specificați opțiunile)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSOLICITĂRI SPECIFICE ÎN OFERTĂ\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n1. Model exact + specificații tehnice complete (fișă tehnică)\n2. Preț final cu TVA inclus\n3. Confirmare omologare RAR (carte de identitate a vehiculului sau procedură)\n4. Garanție (durată, condiții, locație service)\n5. Disponibilitate stoc (livrare imediată sau termen estimat)\n6. Posibilitate test drive / vizionare showroom\n7. Dotări standard incluse și opționale disponibile\n8. Posibilitate finanțare / rate (dacă există)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nTERMEN RĂSPUNS OFERTĂ\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSolicităm ofertă în maxim 48 de ore de la primirea acestui RFQ.\nOfertele incomplete (fără confirmare omologare RAR sau fără preț final) nu vor fi luate în considerare.\n\nVă mulțumim pentru colaborare.\n[SEMNĂTURĂ / ȘTAMPILĂ]",
+    "emails": [],
+    "brief": "# SOURCING BRIEF — ATV Nou 125cc+ Automat Omologat RAR\n**Referință:** SB-ATV-2026-0323\n**Data:** 23 Martie 2026\n\n---\n\n## 1. REZUMAT EXECUTIV\nAchiziție ATV nou pe combustie, minim 125cc, transmisie automată CVT, 2WD, omologat RAR pentru circulație în România, capacitate portantă ≥130 kg. Destinat uzului recreațional cu potențial competițional. Livrare în București, ASAP. Buget: **2.500–5.500 EUR**.\n\n---\n\n## 2. CRITERII ELIMINATORII (MUST HAVE)\n- ✅ Omologat RAR — înmatriculabil în România\n- ✅ Transmisie automată (CVT sau similar)\n- ✅ Cilindree ≥ 125cc\n- ✅ Capacitate portantă ≥ 130 kg\n- ✅ Stoc disponibil în București sau livrare rapidă\n- ✅ Preț ≤ 5.500 EUR cu TVA\n\n---\n\n## 3. CRITERII DE EVALUARE (NICE TO HAVE)\n- Dotări suplimentare incluse (protecții, portbagaj, bara față/spate)\n- Garanție extinsă (>24 luni)\n- Service autorizat în București\n- Posibilitate de personalizare / upgrade competițional\n- Finanțare disponibilă\n\n---\n\n## 4. BRANDURI RECOMANDATE ÎN BUGET\n| Brand | Model recomandat | CC | Obs. |\n|-------|------------------|----|------|\n| CF Moto | CForce 125/200/250 | 125–250cc | Cel mai bun raport calitate/preț, frecvent omologat RAR |\n| TGB | Blade 250/325 | 250–325cc | Brand european, omologare RAR disponibilă |\n| Access Motor | Shade/Outrun 300+ | 300cc+ | Omologare RAR inclusă la import |\n| Kymco | MXU 150/300 | 150–300cc | Brand cunoscut, rețea service |\n| Yamaha | YFM Grizzly 125 | 125cc | Brand premium, dacă bugetul permite |\n\n---\n\n## 5. NOTE IMPORTANTE\n- **Omologarea RAR** este criteriul #1 — verificați documentul de omologare înainte de semnarea contractului\n- ATV-urile sub 50cc NU necesită omologare RAR dar NU corespund cerințelor\n- Unii dealeri oferă asistență la înmatriculare — solicitați explicit acest serviciu\n- Prețurile variază semnificativ cu dotările; negociați întotdeauna dotările standard incluse\n- Pentru utilizare competițională, verificați dacă modelul ales este eligibil pentru clasa de competiție dorită\n\n---\n\n## 6. PAȘI URMĂTORI\n1. Trimiteți RFQ la minim 3 dealeri din lista de furnizori\n2. Solicitați test drive pentru modelele shortlisted\n3. Verificați fizic documentul de omologare RAR\n4. Comparați ofertele pe baza prețului final + garanție + service\n5. Finalizați achiziția cu contract și factură fiscală\n\n---\n*Brief generat automat de platforma Source — 23.03.2026*"
+  },
+  "status": "needs_review",
+  "refinements": 0,
+  "satisfied": false,
+  "pipeline": {
+    "qualityScore": 59,
+    "qualityDecision": "flag",
+    "qualityBreakdown": {
+      "base": 20,
+      "urlScore": 15,
+      "priceScore": 4,
+      "contactScore": 0,
+      "guardrailsScore": 20
+    },
+    "stages": [
+      {
+        "stage": "idle",
+        "event": "start",
+        "timestamp": "2026-03-23T12:56:43.000Z"
+      },
+      {
+        "stage": "generate",
+        "event": "success",
+        "timestamp": "2026-03-23T12:56:43.000Z"
+      },
+      {
+        "stage": "parse",
+        "event": "success",
+        "timestamp": "2026-03-23T12:56:43.001Z"
+      },
+      {
+        "stage": "guardrails",
+        "event": "success",
+        "timestamp": "2026-03-23T12:56:49.308Z"
+      },
+      {
+        "stage": "verify",
+        "event": "success",
+        "timestamp": "2026-03-23T12:56:49.308Z"
+      },
+      {
+        "stage": "quality",
+        "event": "flag",
+        "timestamp": "2026-03-23T12:56:49.308Z"
+      }
+    ],
+    "guardrailsEngine": "nemo",
+    "supplierCount": 5,
+    "verifiedCount": 3,
+    "pricesScraped": 1
+  }
+}

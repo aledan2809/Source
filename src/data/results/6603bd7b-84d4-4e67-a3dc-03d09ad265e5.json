@@ -1,0 +1,234 @@
+{
+  "id": "6603bd7b-84d4-4e67-a3dc-03d09ad265e5",
+  "createdAt": "2026-03-27T19:30:10.074Z",
+  "updatedAt": "2026-03-27T19:30:56.122Z",
+  "spec": {
+    "description": "panouri fotovoltaice 550W bifaciale pentru casa, 10 bucati",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "regional",
+    "zoneLocation": "Bucure?ti",
+    "currency": "EUR",
+    "quantity": 10,
+    "unit": "buca?i",
+    "deadline": "2-saptamani",
+    "budgetMin": 500,
+    "budgetMax": 2000
+  },
+  "result": {
+    "summary": "Cerere de sourcing pentru panouri fotovoltaice 550W bifaciale pentru casa, 10 bucati, in zona Bucuresti",
+    "suppliers": [
+      {
+        "name": "EcoSolaris",
+        "website": "https://shop.ecosolaris.ro",
+        "productUrl": "https://shop.ecosolaris.ro/panou-fotovoltaic-bauer-bs-550-144m10hb-gg-550wp-bifacial-mono-germania",
+        "email": "oferta@ecosolaris.ro",
+        "phone": "+4072948762354",
+        "country": "România",
+        "notes": "Furnizor de panouri fotovoltaice bifaciale de 550W",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 591,
+        "priceMax": 591,
+        "priceCurrency": "RON",
+        "priceSource": "scraped"
+      },
+      {
+        "name": "DB Solar",
+        "website": "https://dbsolar.ro",
+        "productUrl": "https://www.dbsolar.ro/produs/panouri-solare-fotovoltaice-550w-haitai-monocristaline-perc-tier1-noi-sigilate-copie/",
+        "email": "contact@dbsolar.ro",
+        "phone": "+40215557777",
+        "country": "România",
+        "notes": "Furnizor de panouri solare fotovoltaice de 550W monocristaline",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 440,
+        "priceMax": 440,
+        "priceCurrency": "RON",
+        "priceSource": "scraped"
+      },
+      {
+        "name": "Solar 1000",
+        "website": "https://solar1000.com",
+        "productUrl": "https://solar1000.com/produs/panouri-fotovoltaic-monocristaline-dah-solar-550w-dhm-t72x10-fs-555w/",
+        "email": "contact@solar1000.com",
+        "phone": "+40793195806",
+        "country": "România",
+        "notes": "Furnizor de panouri fotovoltaice monocristaline de 550W",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 415,
+        "priceMax": 415,
+        "priceCurrency": "RON",
+        "priceSource": "scraped"
+      },
+      {
+        "name": "Structuri Fotovoltaice",
+        "website": "https://structuri-fotovoltaice.ro",
+        "productUrl": "https://structuri-fotovoltaice.ro/panouri-fotovoltaice-bifaciale-550w-eco-delta-eco-530-550m-72lhc-dgdf/",
+        "email": "office@structuri-fotovoltaice.ro",
+        "phone": "+40726676633",
+        "country": "România",
+        "notes": "Furnizor de panouri fotovoltaice bifaciale de 550W",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 400,
+        "priceMax": 400,
+        "priceCurrency": "RON",
+        "priceSource": "scraped"
+      },
+      {
+        "name": "UTB Shop",
+        "website": "https://utb-shop.ro",
+        "productUrl": "https://utb-shop.ro/Panou-solar-bifacial-LONGI-550W-LR5-72HBD-550-fotovoltaic-monocristalin-2278x1134x35mm-BK69794/PD/16614",
+        "email": "office@utb-shop.ro",
+        "phone": "+40367379997",
+        "country": "România",
+        "notes": "Furnizor de panouri solare bifaciale de 550W",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 450.72,
+        "priceMax": 450.72,
+        "priceCurrency": "RON",
+        "priceSource": "scraped"
+      },
+      {
+        "name": "Emars",
+        "website": "https://emars.ro",
+        "productUrl": "https://emars.ro/panouri-longi-solar-panouri-vendato-solar/311-panouri-fotovoltaice-longi-550w-bifacial.html",
+        "email": "adresa-ta-de@e-mail.com",
+        "phone": "+40726246125",
+        "country": "România",
+        "notes": "Furnizor de panouri fotovoltaice bifaciale de 550W",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 452,
+        "priceMax": 452,
+        "priceCurrency": "RON",
+        "priceSource": "scraped"
+      },
+      {
+        "name": "Macosolar",
+        "website": "https://macosolar.ro",
+        "productUrl": "https://macosolar.ro/panouri-fotovoltaice-dah-dhm-72x10bw-550w-regular",
+        "email": "comenzi@macosolar.ro",
+        "phone": "+40040371785515",
+        "country": "România",
+        "notes": "Furnizor de panouri fotovoltaice de 550W",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceSource": "unavailable"
+      },
+      {
+        "name": "Neobat",
+        "website": "https://neobat.ro",
+        "productUrl": "https://www.neobat.ro/panou-fotovoltaic-monocristalin-550w-ip68-ja-solar",
+        "email": "johndoe@domain.com",
+        "phone": "+40741234567",
+        "country": "România",
+        "notes": "Furnizor de panouri fotovoltaice monocristaline de 550W",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 1050,
+        "priceMax": 1050,
+        "priceCurrency": "RON",
+        "priceSource": "scraped"
+      }
+    ],
+    "rfq": "Cerere de ofertă pentru panouri fotovoltaice 550W bifaciale, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR",
+    "emails": [
+      {
+        "to": "oferta@ecosolaris.ro",
+        "subject": "Cerere de ofertă — Panouri fotovoltaice 550W bifaciale",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri fotovoltaice 550W bifaciale, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      },
+      {
+        "to": "contact@dbsolar.ro",
+        "subject": "Cerere de ofertă — Panouri solare fotovoltaice 550W monocristaline",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri solare fotovoltaice 550W monocristaline, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      },
+      {
+        "to": "contact@solar1000.com",
+        "subject": "Cerere de ofertă — Panouri fotovoltaice monocristaline 550W",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri fotovoltaice monocristaline 550W, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      },
+      {
+        "to": "office@structuri-fotovoltaice.ro",
+        "subject": "Cerere de ofertă — Panouri fotovoltaice bifaciale 550W",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri fotovoltaice bifaciale 550W, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      },
+      {
+        "to": "office@utb-shop.ro",
+        "subject": "Cerere de ofertă — Panouri solare bifaciale 550W",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri solare bifaciale 550W, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      },
+      {
+        "to": "adresa-ta-de@e-mail.com",
+        "subject": "Cerere de ofertă — Panouri fotovoltaice bifaciale 550W",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri fotovoltaice bifaciale 550W, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      },
+      {
+        "to": "comenzi@macosolar.ro",
+        "subject": "Cerere de ofertă — Panouri fotovoltaice 550W",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri fotovoltaice 550W, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      },
+      {
+        "to": "johndoe@domain.com",
+        "subject": "Cerere de ofertă — Panouri fotovoltaice monocristaline 550W",
+        "body": "Bună ziua, Vă rog să ne oferiți o ofertă pentru panouri fotovoltaice monocristaline 550W, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR"
+      }
+    ],
+    "brief": "Cerere de sourcing pentru panouri fotovoltaice 550W bifaciale, 10 bucati, in zona Bucuresti. Detalii tehnice: Tip: Cumpărare, Condiție: Nou, Zonă: Regională — Bucure?ti, Cantitate: 10 buca?i, Deadline: 2-saptamani, Buget MAXIM OBLIGATORIU: 500 - 2000 EUR. Furnizorii selectați sunt: EcoSolaris, DB Solar, Solar 1000, Structuri Fotovoltaice, UTB Shop, Emars, Macosolar, Neobat."
+  },
+  "status": "pending_validation",
+  "refinements": 0,
+  "satisfied": false,
+  "pipeline": {
+    "qualityScore": 98,
+    "qualityDecision": "pass",
+    "qualityBreakdown": {
+      "base": 20,
+      "urlScore": 25,
+      "priceScore": 18,
+      "contactScore": 15,
+      "guardrailsScore": 20
+    },
+    "stages": [
+      {
+        "stage": "idle",
+        "event": "start",
+        "timestamp": "2026-03-27T19:30:55.062Z"
+      },
+      {
+        "stage": "generate",
+        "event": "success",
+        "timestamp": "2026-03-27T19:30:55.062Z"
+      },
+      {
+        "stage": "parse",
+        "event": "success",
+        "timestamp": "2026-03-27T19:30:55.062Z"
+      },
+      {
+        "stage": "guardrails",
+        "event": "success",
+        "timestamp": "2026-03-27T19:30:56.122Z"
+      },
+      {
+        "stage": "verify",
+        "event": "success",
+        "timestamp": "2026-03-27T19:30:56.122Z"
+      },
+      {
+        "stage": "quality",
+        "event": "success",
+        "timestamp": "2026-03-27T19:30:56.122Z"
+      }
+    ],
+    "guardrailsEngine": "nemo",
+    "supplierCount": 8,
+    "verifiedCount": 8,
+    "pricesScraped": 7
+  }
+}

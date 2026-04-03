@@ -65,10 +65,12 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
     });
 
-    // Trigger async AI rule extraction
+    // Trigger async AI rule extraction (fire and forget)
     analyzeAndExtractRules(async (system: string, user: string) => {
       return await runClaude(`${system}\n\n${user}`);
-    }).catch(() => {});
+    }).catch((err) => {
+      console.error('[SupplierFeedback] Fire-and-forget rule extraction failed:', err);
+    });
 
     return NextResponse.json({ ok: true, feedbackType });
   } catch (error) {

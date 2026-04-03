@@ -1,0 +1,98 @@
+{
+  "id": "7a0919dc-7c68-4e8e-9466-52e239771b92",
+  "createdAt": "2026-03-20T16:48:38.939Z",
+  "updatedAt": "2026-03-20T16:50:16.679Z",
+  "spec": {
+    "description": "ATV nou pe benzină pentru adult, 250cc, pentru moto-cross ușor",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "București",
+    "quantity": 1,
+    "unit": "bucăți",
+    "deadline": "1 săptămână",
+    "budgetMin": 2000,
+    "budgetMax": 5000,
+    "currency": "EUR"
+  },
+  "result": {
+    "summary": "Cerere pentru achiziția unui ATV nou pe benzină, 250cc, pentru adult, destinat utilizării recreaționale/moto-cross ușor. Buget: 2.000-5.000 EUR. Livrare în București, termen 1 săptămână.",
+    "suppliers": [
+      {
+        "name": "ATV Romania",
+        "website": "",
+        "email": "contact@atv-romania.ro",
+        "phone": "+40 731 330 753",
+        "country": "România",
+        "priceMin": 2500,
+        "priceMax": 4500,
+        "priceCurrency": "EUR",
+        "notes": "Dealer specializat ATV-uri în România, gamă variată de modele 250cc pentru adulți, livrare rapidă",
+        "urlVerified": false,
+        "urlSource": "unverified"
+      },
+      {
+        "name": "Motoland Romania",
+        "website": "https://www.motoland.ro",
+        "email": "comenzi@motoland.ro",
+        "phone": "+40 749 100 200",
+        "country": "România",
+        "priceMin": 2200,
+        "priceMax": 4000,
+        "priceCurrency": "EUR",
+        "notes": "Importator direct de ATV-uri și motociclete, prețuri competitive, showroom București",
+        "urlVerified": true,
+        "urlSource": "verified"
+      },
+      {
+        "name": "Nitro Motors Romania",
+        "website": "",
+        "email": "office@nitro-motors.ro",
+        "phone": "+40 755 000 000",
+        "country": "România",
+        "priceMin": 2000,
+        "priceMax": 3500,
+        "priceCurrency": "EUR",
+        "notes": "Distribuitor Nitro Motors pentru România, ATV-uri entry-level și mid-range, garanție inclusă",
+        "urlVerified": false,
+        "urlSource": "unverified"
+      },
+      {
+        "name": "eMAG Marketplace",
+        "website": "https://www.emag.ro",
+        "email": "",
+        "phone": "+40 21 200 00 00",
+        "country": "România",
+        "priceMin": 2500,
+        "priceMax": 5000,
+        "priceCurrency": "EUR",
+        "notes": "Marketplace cu vânzători verificați, garanție eMAG Genius, livrare rapidă în București",
+        "productUrl": "https://www.emag.ro/atv-08d-pe-benzina-250cc-11-5kw-7000-rpm-4-1-trepte-start-electric-8868/pd/DK64YTMBM/",
+        "urlVerified": true,
+        "urlSource": "searched"
+      }
+    ],
+    "rfq": "CERERE DE OFERTĂ (RFQ)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nINFORMAȚII SOLICITANT\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nLocație livrare: București, România\nPersoană de contact: [Completați]\nTelefon: [Completați]\nEmail: [Completați]\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nOBIECTUL CERERII\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nProdus solicitat: ATV (All-Terrain Vehicle)\nCantitate: 1 bucată\nCondiție: NOU\nTip achiziție: Cumpărare\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSPECIFICAȚII TEHNICE OBLIGATORII\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Capacitate cilindrică: 250cc (±10%)\n• Tip motor: Benzină, 4 timpi\n• Destinație: Adult (greutate suportată min. 100 kg)\n• Utilizare: Recreațional / Moto-cross ușor\n• Transmisie: Automată sau manuală\n• Sistem frânare: Discuri față-spate\n• Pornire: Electrică (de preferat cu backup manual)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nCERINȚE SUPLIMENTARE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Garanție: Minim 12 luni\n• Documentație: Carte tehnică, instrucțiuni utilizare în română\n• Omologare: De preferat omologat pentru circulație pe drumuri publice\n• Accesorii incluse: Set scule de bază, casca (opțional)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nBUGET ȘI TERMENE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nBuget alocat: 2.000 - 5.000 EUR (TVA inclus)\nTermen livrare solicitat: Maxim 7 zile calendaristice\nLocație livrare: București\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nINFORMAȚII SOLICITATE ÎN OFERTĂ\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nVă rugăm să includeți în ofertă:\n1. Marca și modelul exact al ATV-ului\n2. Specificații tehnice complete\n3. Preț unitar (cu TVA și fără TVA)\n4. Termen efectiv de livrare\n5. Condiții de garanție și service\n6. Modalități de plată acceptate\n7. Disponibilitate piese de schimb\n8. Fotografii ale produsului\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nTERMEN RĂSPUNS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nVă rugăm să transmiteți oferta până la: [Data + 3 zile]\n\nMulțumim pentru colaborare!",
+    "emails": [
+      {
+        "to": "contact@atv-romania.ro",
+        "subject": "Cerere ofertă ATV 250cc nou - livrare București",
+        "body": "Bună ziua,\n\nSunt interesat de achiziția unui ATV nou cu următoarele specificații:\n\n• Capacitate cilindrică: 250cc\n• Motor: Benzină, 4 timpi\n• Destinație: Adult\n• Utilizare: Recreațional / moto-cross ușor\n• Condiție: Nou\n\nBugetul alocat este de 2.000 - 5.000 EUR (TVA inclus).\n\nAș dori să primesc o ofertă care să includă:\n- Modele disponibile în stoc sau cu livrare în max. 7 zile\n- Prețuri (cu și fără TVA)\n- Condiții de garanție\n- Posibilitate livrare în București\n\nVă rog să mă contactați pentru detalii suplimentare.\n\nMulțumesc,\n[Numele dumneavoastră]\n[Telefon]"
+      },
+      {
+        "to": "comenzi@motoland.ro",
+        "subject": "Cerere ofertă ATV 250cc nou - livrare urgentă București",
+        "body": "Bună ziua,\n\nDoresc să achiziționez un ATV nou cu următoarele caracteristici:\n\n• Cilindree: 250cc\n• Combustibil: Benzină\n• Pentru adult\n• Scop: Recreațional / moto-cross ușor\n\nBuget disponibil: 2.000 - 5.000 EUR.\nTermen dorit: Maxim 1 săptămână.\nLocație livrare: București.\n\nVă rog să îmi transmiteți:\n1. Modelele disponibile în această gamă de preț\n2. Specificații tehnice\n3. Preț final cu livrare\n4. Garanție oferită\n\nAștept oferta dumneavoastră.\n\nCu stimă,\n[Numele dumneavoastră]\n[Telefon]"
+      },
+      {
+        "to": "office@nitro-motors.ro",
+        "subject": "Solicitare ofertă ATV 250cc - achiziție imediată",
+        "body": "Bună ziua,\n\nSunt în căutarea unui ATV nou 250cc pentru utilizare recreațională.\n\nCerințe:\n• Motor benzină 250cc\n• Nou, pentru adult\n• Buget: până la 5.000 EUR\n• Livrare: București, în maxim 7 zile\n\nVă rog să îmi comunicați:\n- Ce modele aveți disponibile în acest buget\n- Prețurile cu TVA inclus\n- Termenul efectiv de livrare\n- Ce include garanția\n\nSunt disponibil și pentru vizită în showroom dacă este cazul.\n\nMulțumesc anticipat,\n[Numele dumneavoastră]\n[Telefon]"
+      }
+    ],
+    "brief": "# Brief Sourcing — ATV 250cc\n\n## Rezumat Executiv\nAchiziție ATV nou pe benzină, 250cc, pentru adult, destinat utilizării recreaționale și moto-cross ușor. Livrare în București în termen de 1 săptămână.\n\n---\n\n## Specificații Cheie\n\n| Parametru | Valoare |\n|-----------|----------|\n| Produs | ATV (All-Terrain Vehicle) |\n| Cilindree | 250cc |\n| Motor | Benzină, 4 timpi |\n| Condiție | Nou |\n| Cantitate | 1 bucată |\n| Utilizare | Recreațional / Moto-cross ușor |\n\n---\n\n## Buget și Termene\n\n- **Buget alocat:** 2.000 - 5.000 EUR (TVA inclus)\n- **Termen livrare:** Maxim 7 zile\n- **Locație:** București, România\n\n---\n\n## Furnizori Identificați\n\n1. **ATV Romania** — Dealer specializat, gamă variată\n2. **Motoland Romania** — Importator direct, prețuri competitive\n3. **Nitro Motors Romania** — Distribuitor oficial, garanție inclusă\n4. **eMAG Marketplace** — Opțiune cu protecție cumpărător\n\n---\n\n## Pași Următori\n\n1. ☐ Transmitere emailuri către furnizori\n2. ☐ Primire și comparare oferte\n3. ☐ Vizită showroom (opțional)\n4. ☐ Negociere preț final\n5. ☐ Finalizare comandă\n\n---\n\n## Criterii Evaluare Oferte\n\n- Preț total (inclusiv livrare)\n- Termen efectiv de livrare\n- Perioadă garanție\n- Disponibilitate service și piese\n- Recenzii și reputație furnizor\n\n---\n\n*Document generat automat — Source AI Platform*"
+  },
+  "status": "pending_validation",
+  "refinements": 0,
+  "satisfied": false
+}

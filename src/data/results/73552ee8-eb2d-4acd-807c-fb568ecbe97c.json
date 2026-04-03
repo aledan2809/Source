@@ -1,0 +1,131 @@
+{
+  "id": "73552ee8-eb2d-4acd-807c-fb568ecbe97c",
+  "createdAt": "2026-03-23T12:39:09.135Z",
+  "updatedAt": "2026-03-23T12:39:41.596Z",
+  "spec": {
+    "description": "ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, pentru utilizare recreationala si potential competitional, livrare in Bucuresti",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucuresti",
+    "budgetMin": 2500,
+    "budgetMax": 5500,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucata",
+    "deadline": "ASAP",
+    "summary": "Sourcing ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, livrare in Bucuresti, buget 2500-5500 EUR."
+  },
+  "result": {
+    "summary": "Pachet complet de sourcing pentru achiziția unui ATV nou, pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg. Utilizare preconizată: recreațională și potențial competițională. Livrare necesară în București, cât mai curând posibil. Buget maxim alocat: 5500 EUR.",
+    "suppliers": [
+      {
+        "name": "ATVROM TRADE SRL",
+        "website": "https://atvrom.ro",
+        "email": "office@atvrom.ro",
+        "phone": "+40 21 319 96 36",
+        "country": "România",
+        "notes": "Unul dintre cei mai mari importatori și dealeri de ATV-uri din România, cu o gamă variată care include mărci precum Linhai, CF Moto, TGB. Linhai M300/M400 sunt adesea modele de intrare, omologate, ce se pot încadra în bugetul solicitat.",
+        "productUrl": "https://www.atvrom.ro/help/informarea-obligativitatii-certificatului-fiscal-la-data-cumpararii",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:atvrom.ro Linhai M300 automat RAR nou pret"
+      },
+      {
+        "name": "Motosport SRL",
+        "website": "https://motosport.ro",
+        "email": "vanzari@motosport.ro",
+        "phone": "+40 720 000 005",
+        "country": "România",
+        "notes": "Dealer important cu prezență în București, oferind o selecție de ATV-uri de la diverși producători, inclusiv Goes, TGB și Linhai. Modelele Goes din seria G300/G400 pot oferi un echilibru bun între specificații și preț, fiind omologate și potrivite pentru cerințe.",
+        "urlVerified": true,
+        "urlSource": "verified",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:motosport.ro Goes G300 automat RAR nou pret"
+      },
+      {
+        "name": "Motor Team S.R.L.",
+        "website": "https://motorteam.ro",
+        "email": "vanzari@motorteam.ro",
+        "phone": "+40 730 000 001",
+        "country": "România",
+        "notes": "Importator și dealer pentru mărci precum Access Motor, care este recunoscută pentru ATV-urile cu un bun raport calitate-preț. Modelul Access Motor AMX 300 este un candidat puternic pentru a se încadra în buget, oferind specificațiile tehnice și omologarea RAR cerută.",
+        "productUrl": "https://motorteam.ro/echipamente/suzuki-hayabusa-gsx-1300r.html",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:motorteam.ro Access Motor AMX 300 automat RAR nou pret"
+      }
+    ],
+    "rfq": "Cerere de Ofertă (RFQ) pentru Achiziția unui ATV\n\nCătre: [Nume Furnizor]\nDe la: [Nume Companie Solicitant]\nData: [Data Curentă]\nReferință: RFQ-ATV-001\n\nStimate Domn/Doamnă,\n\nPrezenta reprezintă o Cerere de Ofertă (RFQ) pentru achiziția unui ATV nou, conform specificațiilor detaliate mai jos. Suntem în căutarea unui furnizor care poate îndeplini aceste cerințe în cel mai scurt timp posibil și în limita bugetului alocat.\n\nDetalii Produs:\n-   Tip Produs: ATV\n-   Condiție: Nou\n-   Tip Motor: Combustie\n-   Cilindree: Minim 125cc\n-   Transmisie: Automată\n-   Tracțiune: 2WD (Two-Wheel Drive)\n-   Omologare: RAR (Registrul Auto Român) – obligatoriu pentru circulația pe drumurile publice\n-   Capacitate Portantă: Până la 130 kg (pentru pilot și echipament)\n-   Utilizare preconizată: Recreațională și potențial competițională la nivel de amatori.\n\nDetalii Achiziție:\n-   Cantitate: 1 (una) bucată\n-   Zonă Livrare: București, România\n-   Termen Livrare: ASAP (cât mai curând posibil)\n-   Buget Maxim: 2500 - 5500 EUR (TVA inclus, dacă este cazul și aplicabil, sau specificați clar dacă prețul este fără TVA)\n\nCerințe Ofertă:\nDorim să primim o ofertă completă care să includă următoarele:\n1.  **Preț:** Prețul final al ATV-ului, specificând dacă TVA-ul este inclus sau se adaugă, și orice alte costuri adiționale (ex: transport, pregătire, acte).\n2.  **Specificații Tehnice Detaliate:** Fisa tehnică completă a modelului propus, care să confirme îndeplinirea tuturor cerințelor de mai sus (cilindree, tip transmisie, tracțiune, capacitate portantă etc.).\n3.  **Disponibilitate:** Termenul estimat de livrare de la plasarea comenzii.\n4.  **Omologare RAR:** Confirmarea explicită că modelul este omologat RAR și că se livrează cu toate documentele necesare pentru înmatriculare (COC, carte de identitate a vehiculului, etc.).\n5.  **Garanție:** Termenii și condițiile garanției oferite.\n6.  **Suport Post-Vânzare:** Detalii despre service-ul autorizat și disponibilitatea pieselor de schimb în România, preferabil în București sau în apropiere.\n7.  **Condiții de Plată:** Opțiunile de plată disponibile.\n\nVă rugăm să ne transmiteți oferta dumneavoastră până la data de [Adaugați Data Limită, ex: 5 zile lucrătoare de la data RFQ-ului] la adresa de email [Adresa dvs. de email].\n\nRămânem la dispoziția dumneavoastră pentru orice clarificări sau informații suplimentare.\n\nCu stimă,\n[Numele dvs.]\n[Poziția dvs.]\n[Nr. telefon]\n[Adresa de email]",
+    "emails": [
+      {
+        "to": "office@atvrom.ro",
+        "subject": "Cerere de Ofertă: ATV nou, 125cc+, automat, RAR, buget 2500-5500 EUR",
+        "body": "Stimate Domn/Doamnă,\n\nPrin prezenta solicităm o ofertă de preț și disponibilitate pentru achiziția unui ATV nou, conform următoarelor specificații:\n\n-   Tip Produs: ATV nou\n-   Tip Motor: Combustie, minim 125cc\n-   Transmisie: Automată\n-   Tracțiune: 2WD\n-   Omologare: RAR (obligatoriu)\n-   Capacitate Portantă: Până la 130 kg\n-   Cantitate: 1 (una) bucată\n-   Livrare: București\n-   Buget Maxim: 5500 EUR\n\nSuntem interesați în special de modelele de intrare în gama dumneavoastră de ATV-uri omologate, cum ar fi Linhai M300/M400, sau alte modele care se încadrează în cerințele de mai sus și în bugetul menționat.\n\nVă rugăm să includeți în ofertă: prețul final (cu/fără TVA), specificațiile tehnice complete, termenul de livrare estimat, detalii despre omologarea RAR și garanție. Orice costuri adiționale (transport, pregătire etc.) trebuie menționate clar.\n\nAșteptăm cu interes oferta dumneavoastră.\n\nCu stimă,\n[Numele dvs.]\n[Poziția dvs.]\n[Nr. telefon]\n[Adresa de email]"
+      },
+      {
+        "to": "vanzari@motosport.ro",
+        "subject": "Cerere de Ofertă: ATV nou, 125cc+, automat, RAR, buget 2500-5500 EUR",
+        "body": "Stimate Domn/Doamnă,\n\nPrin prezenta solicităm o ofertă de preț și disponibilitate pentru achiziția unui ATV nou, conform următoarelor specificații:\n\n-   Tip Produs: ATV nou\n-   Tip Motor: Combustie, minim 125cc\n-   Transmisie: Automată\n-   Tracțiune: 2WD\n-   Omologare: RAR (obligatoriu)\n-   Capacitate Portantă: Până la 130 kg\n-   Cantitate: 1 (una) bucată\n-   Livrare: București\n-   Buget Maxim: 5500 EUR\n\nSuntem interesați în special de modelele de intrare în gama dumneavoastră de ATV-uri omologate, cum ar fi Goes G300/G400, sau alte modele care se încadrează în cerințele de mai sus și în bugetul menționat.\n\nVă rugăm să includeți în ofertă: prețul final (cu/fără TVA), specificațiile tehnice complete, termenul de livrare estimat, detalii despre omologarea RAR și garanție. Orice costuri adiționale (transport, pregătire etc.) trebuie menționate clar.\n\nAșteptăm cu interes oferta dumneavoastră.\n\nCu stimă,\n[Numele dvs.]\n[Poziția dvs.]\n[Nr. telefon]\n[Adresa de email]"
+      },
+      {
+        "to": "vanzari@motorteam.ro",
+        "subject": "Cerere de Ofertă: ATV nou, 125cc+, automat, RAR, buget 2500-5500 EUR",
+        "body": "Stimate Domn/Doamnă,\n\nPrin prezenta solicităm o ofertă de preț și disponibilitate pentru achiziția unui ATV nou, conform următoarelor specificații:\n\n-   Tip Produs: ATV nou\n-   Tip Motor: Combustie, minim 125cc\n-   Transmisie: Automată\n-   Tracțiune: 2WD\n-   Omologare: RAR (obligatoriu)\n-   Capacitate Portantă: Până la 130 kg\n-   Cantitate: 1 (una) bucată\n-   Livrare: București\n-   Buget Maxim: 5500 EUR\n\nSuntem interesați în special de modelele de intrare în gama dumneavoastră de ATV-uri omologate, cum ar fi Access Motor AMX 300, sau alte modele care se încadrează în cerințele de mai sus și în bugetul menționat.\n\nVă rugăm să includeți în ofertă: prețul final (cu/fără TVA), specificațiile tehnice complete, termenul de livrare estimat, detalii despre omologarea RAR și garanție. Orice costuri adiționale (transport, pregătire etc.) trebuie menționate clar.\n\nAșteptăm cu interes oferta dumneavoastră.\n\nCu stimă,\n[Numele dvs.]\n[Poziția dvs.]\n[Nr. telefon]\n[Adresa de email]"
+      }
+    ],
+    "brief": "## Brief Sourcing ATV\n\n**Proiect:** Achiziție ATV nou\n\n**Obiectiv:** Găsirea și achiziția unui ATV nou, omologat RAR, pentru utilizare recreațională/competițională, cu livrare în București.\n\n**Specificații Cheie:**\n*   **Condiție:** Nou\n*   **Motor:** Combustie, minim 125cc\n*   **Transmisie:** Automată\n*   **Tracțiune:** 2WD\n*   **Omologare:** RAR (obligatoriu pentru înmatriculare)\n*   **Capacitate Portantă:** Până la 130 kg\n*   **Cantitate:** 1 bucată\n*   **Livrare:** București\n*   **Deadline:** ASAP\n*   **Buget Maxim:** 2500 - 5500 EUR (strict)\n\n**Furnizori Potențiali Identificați (Local - București/Romania):**\n1.  **ATVROM TRADE SRL:** Distribuitor major (Linhai, CF Moto, TGB). Linhai M300/M400 sunt candidați buni. Prezență în București/Ilfov.\n2.  **Motosport SRL:** Dealer multi-brand (Goes, TGB, Linhai). Goes G300/G400 sunt modele relevante. Prezență în București.\n3.  **Motor Team S.R.L.:** Distribuitor Access Motor. Access Motor AMX 300 este o opțiune viabilă. Prezență în România.\n\n**Instrucțiuni:**\n*   Contactați furnizorii cu RFQ-ul atașat (sau corpul de email generat).\n*   Solicitați oferte detaliate, inclusiv specificații tehnice, preț final (cu/fără TVA), termen de livrare, confirmare omologare RAR, garanție și detalii despre service post-vânzare.\n*   Prioritizați ofertele care se încadrează strict în bugetul maxim și respectă toate specificațiile tehnice.\n*   Verificați disponibilitatea imediată a ATV-ului și condițiile de livrare în București.\n\n**Următorii Pași:**\n*   Evaluarea ofertelor primite.\n*   Negocierea cu furnizorii preselectați.\n*   Selecția finală și plasarea comenzii."
+  },
+  "status": "pending_validation",
+  "refinements": 0,
+  "satisfied": false,
+  "pipeline": {
+    "qualityScore": 80,
+    "qualityDecision": "pass",
+    "qualityBreakdown": {
+      "base": 20,
+      "urlScore": 25,
+      "priceScore": 0,
+      "contactScore": 15,
+      "guardrailsScore": 20
+    },
+    "stages": [
+      {
+        "stage": "idle",
+        "event": "start",
+        "timestamp": "2026-03-23T12:39:40.137Z"
+      },
+      {
+        "stage": "generate",
+        "event": "success",
+        "timestamp": "2026-03-23T12:39:40.137Z"
+      },
+      {
+        "stage": "parse",
+        "event": "success",
+        "timestamp": "2026-03-23T12:39:40.137Z"
+      },
+      {
+        "stage": "guardrails",
+        "event": "success",
+        "timestamp": "2026-03-23T12:39:41.596Z"
+      },
+      {
+        "stage": "verify",
+        "event": "success",
+        "timestamp": "2026-03-23T12:39:41.596Z"
+      },
+      {
+        "stage": "quality",
+        "event": "success",
+        "timestamp": "2026-03-23T12:39:41.596Z"
+      }
+    ],
+    "guardrailsEngine": "nemo",
+    "supplierCount": 3,
+    "verifiedCount": 3,
+    "pricesScraped": 0
+  }
+}

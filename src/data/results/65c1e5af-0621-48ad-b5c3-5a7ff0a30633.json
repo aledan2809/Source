@@ -1,0 +1,24 @@
+{
+  "id": "65c1e5af-0621-48ad-b5c3-5a7ff0a30633",
+  "createdAt": "2026-03-23T12:46:55.782Z",
+  "updatedAt": "2026-03-23T12:46:58.359Z",
+  "spec": {
+    "description": "ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, pentru utilizare recreationala si potential competitional, livrare in Bucuresti",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucuresti",
+    "budgetMin": 2500,
+    "budgetMax": 5500,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucata",
+    "deadline": "ASAP",
+    "summary": "ATV nou combustie 125cc+ automata 2WD omologat RAR, Bucuresti, 2500-5500 EUR."
+  },
+  "result": null,
+  "status": "error",
+  "refinements": 0,
+  "satisfied": false,
+  "error": "All AI providers failed: Anthropic API: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_i | Claude CLI: claude CLI not installed | Gemini API: {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\"status\":\"UNAVAILABLE\"}}"
+}

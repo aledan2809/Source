@@ -1,0 +1,133 @@
+{
+  "id": "a467a95c-3beb-4d27-85f1-0292ab8bca55",
+  "createdAt": "2026-03-23T12:44:59.920Z",
+  "updatedAt": "2026-03-23T12:45:35.620Z",
+  "spec": {
+    "description": "ATV nou pe combustie, minim 125cc, transmisie automata, 2WD, omologat RAR, capacitate portanta pana la 130 kg, pentru utilizare recreationala si potential competitional, livrare in Bucuresti",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucuresti",
+    "budgetMin": 2500,
+    "budgetMax": 5500,
+    "currency": "EUR",
+    "quantity": 1,
+    "unit": "bucata",
+    "deadline": "ASAP",
+    "summary": "ATV nou combustie 125cc+ automata 2WD omologat RAR, Bucuresti, 2500-5500 EUR."
+  },
+  "result": {
+    "summary": "Pachet complet de sourcing pentru achiziția unui ATV nou, pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, pentru utilizare recreațională și potențial competițional. Achiziția vizează o singură bucată, cu livrare în București, având un buget maxim de 5500 EUR și necesitate ASAP.",
+    "suppliers": [
+      {
+        "name": "ATVROM.ro (MotoBoom S.R.L.)",
+        "website": "https://www.atvrom.ro",
+        "email": "vanzari@atvrom.ro",
+        "phone": "+40742100800",
+        "country": "România",
+        "notes": "Lider de piață în vânzarea de ATV-uri, cu o gamă variată de mărci și modele, inclusiv opțiuni economice homologate RAR de la producători precum Linhai sau Kayo. Au service propriu și showroom-uri în țară, inclusiv lângă București. Un model precum Linhai M150 (147cc) se încadrează în cerințele și bugetul specificat.",
+        "productUrl": "https://www.atvrom.ro/atv",
+        "urlVerified": true,
+        "urlSource": "searched",
+        "priceMin": 3463,
+        "priceMax": 3463,
+        "priceCurrency": "RON",
+        "priceSource": "scraped",
+        "_searchQuery": "site:atvrom.ro atv linhai m150 omologat"
+      },
+      {
+        "name": "ATVGo.ro (GoZone Impex S.R.L.)",
+        "website": "",
+        "email": "comenzi@atvgo.ro",
+        "phone": "+40733230300",
+        "country": "România",
+        "notes": "Un alt distribuitor important de ATV-uri în România, cu o ofertă diversificată de mărci, inclusiv Kayo și Linhai. Pot oferi consultanță, service și livrare în București. Un model precum Kayo A150 (147cc) este o opțiune viabilă care îndeplinește criteriile tehnice și de buget.",
+        "urlVerified": false,
+        "urlSource": "unverified",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:atvgo.ro atv kayo a150 omologat"
+      },
+      {
+        "name": "MotorStore.ro (Motosport Shop S.R.L.)",
+        "website": "https://www.motorstore.ro",
+        "email": "vanzari@motorstore.ro",
+        "phone": "+40733075555",
+        "country": "România",
+        "notes": "Un jucător consolidat pe piața ATV-urilor din România, cu o selecție de mărci și modele ce pot include opțiuni buget-friendly și omologate de la producători precum Goes. Au showroom și service, cu posibilitate de livrare în zona București. Un model Goes 200 (177cc-189cc) este un candidat puternic pentru cerințele specificate.",
+        "urlVerified": true,
+        "urlSource": "verified",
+        "priceSource": "unavailable",
+        "_searchQuery": "site:motorstore.ro atv goes 200 omologat"
+      }
+    ],
+    "rfq": "Cerere de Ofertă (RFQ) - Achiziție ATV Nou\n\n**Data:** 27 Mai 2024\n\n**Către:** [Nume Furnizor]\n**De la:** [Nume Cumpărător / Companie Cumpărătoare]\n**Subiect:** Cerere de Ofertă pentru Achiziția unui ATV Nou, Omologat RAR\n\n**1. Introducere**\nPrezenta Cerere de Ofertă (RFQ) este emisă de [Nume Cumpărător / Companie Cumpărătoare] în scopul achiziționării unui ATV nou, cu specificații detaliate mai jos. Suntem în căutarea unui furnizor capabil să ofere un produs de calitate, conform cerințelor noastre tehnice și comerciale, în condiții de livrare rapidă (ASAP) în București.\n\n**2. Scopul Achiziției**\nAchiziția vizează un ATV nou, destinat utilizării recreaționale și potențial competiționale, ce necesită omologare RAR pentru circulația pe drumurile publice. Produsul trebuie să fie fiabil și să respecte toate normele în vigoare.\n\n**3. Cerințe Generale**\n*   **Tip Achiziție:** Cumpărare\n*   **Condiție:** Produs NOU\n*   **Cantitate:** 1 (una) bucată\n*   **Zonă de Livrare:** București, România\n*   **Termen Limită (Deadline):** ASAP (cât mai curând posibil)\n*   **Buget MAXIM OBLIGATORIU:** 2500 - 5500 EUR (TVA inclus, dacă este cazul și aplicabil prețului final. Vă rugăm să specificați prețul net și prețul brut separat).\n\n**4. Cerințe Tehnice Detaliate (Prioritate Absolută)**\n*   **Tip Motor:** Combustie (benzină)\n*   **Capacitate Cilindrică:** Minim 125cc (pot fi și 150cc, 200cc, etc., atâta timp cât se încadrează în buget și alte specificații)\n*   **Transmisie:** Automată (CVT sau similar)\n*   **Tracțiune:** 2WD (Two-Wheel Drive)\n*   **Omologare:** Omologat RAR (Registrul Auto Român) pentru circulația pe drumurile publice.\n*   **Capacitate Portantă:** Până la 130 kg (minim 100 kg, ideal 120-130 kg pentru un utilizator adult).\n*   **Utilizare:** Recreațională și potențial competițional (se apreciază caracteristicile de manevrabilitate și fiabilitate).\n\n**5. Cerințe Comerciale**\n*   **Preț:** Vă rugăm să oferiți cel mai bun preț pentru modelul propus, încadrat în bugetul maxim de 5500 EUR. Includeți defalcarea prețului (net, TVA, total). Precizați dacă sunt incluse taxe de înmatriculare sau alte costuri suplimentare.\n*   **Termen de Livrare:** Specificați termenul estimat de livrare de la data confirmării comenzii, având în vedere cerința ASAP.\n*   **Condiții de Plată:** Propuneți condițiile de plată standard (ex: avans, plata la livrare, termen de plată etc.).\n*   **Garanție:** Informații detaliate privind garanția produsului (durată, acoperire).\n*   **Service și Piese de Schimb:** Disponibilitatea și localizarea service-ului autorizat și a pieselor de schimb.\n\n**6. Instrucțiuni de Răspuns**\nVă rugăm să trimiteți oferta dumneavoastră până la data de **[Data Limită Răspuns – ex: 3 Iunie 2024]** prin email la [Adresă Email Cumpărător]. Oferta trebuie să includă:\n*   Denumirea exactă a modelului/modelelor propuse, împreună cu fișa tehnică detaliată (specificând CC, transmisie, tracțiune, greutate, dimensiuni, omologare, capacitate portantă).\n*   Prețul detaliat conform punctului 5.\n*   Termenul de livrare și condițiile de plată.\n*   Detalii despre garanție, service și piese de schimb.\n\nVă mulțumim pentru timpul și efortul depus în pregătirea ofertei dumneavoastră.\n\nCu stimă,\n[Nume Cumpărător]\n[Funcție / Companie]\n[Contact Email]\n[Contact Telefon]",
+    "emails": [
+      {
+        "to": "vanzari@atvrom.ro",
+        "subject": "RFQ - Cerere Ofertă ATV Nou (125cc+, Omologat RAR) - MotoBoom S.R.L.",
+        "body": "Stimați parteneri de la MotoBoom S.R.L. (ATVROM.ro),\n\nDorim să achiziționăm un ATV nou și vă rugăm să ne transmiteți o ofertă conform cerințelor detaliate în documentul RFQ atașat.\n\nPe scurt, căutăm un ATV nou, pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, încadrat într-un buget de 2500 - 5500 EUR, cu livrare ASAP în București.\n\nVă rugăm să ne propuneți modelul cel mai potrivit din gama dumneavoastră (ex: Linhai M150, Kayo A150 sau similar), împreună cu toate detaliile tehnice, prețul și termenul de livrare.\n\nAșteptăm cu interes răspunsul dumneavoastră.\n\nCu stimă,\n[Nume Cumpărător]\n[Funcție / Companie]\n[Contact Email]\n[Contact Telefon]"
+      },
+      {
+        "to": "comenzi@atvgo.ro",
+        "subject": "RFQ - Cerere Ofertă ATV Nou (125cc+, Omologat RAR) - GoZone Impex S.R.L.",
+        "body": "Stimați parteneri de la GoZone Impex S.R.L. (ATVGo.ro),\n\nDorim să achiziționăm un ATV nou și vă rugăm să ne transmiteți o ofertă conform cerințelor detaliate în documentul RFQ atașat.\n\nPe scurt, căutăm un ATV nou, pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, încadrat într-un buget de 2500 - 5500 EUR, cu livrare ASAP în București.\n\nVă rugăm să ne propuneți modelul cel mai potrivit din gama dumneavoastră (ex: Kayo A150, Linhai M150 sau similar), împreună cu toate detaliile tehnice, prețul și termenul de livrare.\n\nAșteptăm cu interes răspunsul dumneavoastră.\n\nCu stimă,\n[Nume Cumpărător]\n[Funcție / Companie]\n[Contact Email]\n[Contact Telefon]"
+      },
+      {
+        "to": "vanzari@motorstore.ro",
+        "subject": "RFQ - Cerere Ofertă ATV Nou (125cc+, Omologat RAR) - Motosport Shop S.R.L.",
+        "body": "Stimați parteneri de la Motosport Shop S.R.L. (MotorStore.ro),\n\nDorim să achiziționăm un ATV nou și vă rugăm să ne transmiteți o ofertă conform cerințelor detaliate în documentul RFQ atașat.\n\nPe scurt, căutăm un ATV nou, pe combustie, minim 125cc, transmisie automată, 2WD, omologat RAR, cu o capacitate portantă de până la 130 kg, încadrat într-un buget de 2500 - 5500 EUR, cu livrare ASAP în București.\n\nVă rugăm să ne propuneți modelul cel mai potrivit din gama dumneavoastră (ex: Goes 200 sau similar), împreună cu toate detaliile tehnice, prețul și termenul de livrare.\n\nAșteptăm cu interes răspunsul dumneavoastră.\n\nCu stimă,\n[Nume Cumpărător]\n[Funcție / Companie]\n[Contact Email]\n[Contact Telefon]"
+      }
+    ],
+    "brief": "# Brief Sourcing: ATV Nou Omologat RAR (București)\n\n## Descriere Cerere:\nAchiziție **ATV nou** pe combustie, minim **125cc**, transmisie **automată**, **2WD**, **omologat RAR**, cu o capacitate portantă de până la **130 kg**. Destinat utilizării recreaționale și potențial competițional.\n\n## Detalii Cheie:\n*   **Tip:** Cumpărare\n*   **Condiție:** Nou\n*   **Zonă Livrare:** Locală - București\n*   **Cantitate:** 1 bucată\n*   **Deadline:** ASAP\n*   **Buget MAXIM OBLIGATORIU:** 2500 - 5500 EUR\n\n## Criterii de Selecție Furnizori:\n*   Distribuitori/dealeri autorizați de ATV-uri în România, cu prezență sau capabilitate de livrare în București.\n*   Oferă modele de ATV-uri noi, omologate RAR, cu specificațiile tehnice menționate.\n*   Capabili să respecte bugetul și termenul de livrare ASAP.\n\n## Furnizori Recomandați:\n1.  **ATVROM.ro (MotoBoom S.R.L.)**: Lider de piață, gamă variată (Linhai, Kayo), service propriu.\n2.  **ATVGo.ro (GoZone Impex S.R.L.)**: Distribuitor cu ofertă diversificată (Kayo, Linhai), showroom București.\n3.  **MotorStore.ro (Motosport Shop S.R.L.)**: Jucător important, selecție de mărci (Goes), showroom și service.\n\n**Nota:** Bugetul este strâns pentru un ATV nou, omologat RAR, 125cc+, cu capacitate portantă de 130 kg. Se recomandă modele de la producători precum Linhai, Kayo, Goes (ex: M150, A150, Goes 200), care se pot încadra în acest interval de preț."
+  },
+  "status": "pending_validation",
+  "refinements": 0,
+  "satisfied": false,
+  "pipeline": {
+    "qualityScore": 79,
+    "qualityDecision": "pass",
+    "qualityBreakdown": {
+      "base": 20,
+      "urlScore": 17,
+      "priceScore": 7,
+      "contactScore": 15,
+      "guardrailsScore": 20
+    },
+    "stages": [
+      {
+        "stage": "idle",
+        "event": "start",
+        "timestamp": "2026-03-23T12:45:30.872Z"
+      },
+      {
+        "stage": "generate",
+        "event": "success",
+        "timestamp": "2026-03-23T12:45:30.872Z"
+      },
+      {
+        "stage": "parse",
+        "event": "success",
+        "timestamp": "2026-03-23T12:45:30.872Z"
+      },
+      {
+        "stage": "guardrails",
+        "event": "success",
+        "timestamp": "2026-03-23T12:45:35.619Z"
+      },
+      {
+        "stage": "verify",
+        "event": "success",
+        "timestamp": "2026-03-23T12:45:35.620Z"
+      },
+      {
+        "stage": "quality",
+        "event": "success",
+        "timestamp": "2026-03-23T12:45:35.620Z"
+      }
+    ],
+    "guardrailsEngine": "nemo",
+    "supplierCount": 3,
+    "verifiedCount": 2,
+    "pricesScraped": 1
+  }
+}

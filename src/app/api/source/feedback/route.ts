@@ -75,7 +75,9 @@ export async function POST(request: NextRequest) {
     // Trigger async AI rule extraction (fire and forget)
     analyzeAndExtractRules(async (system: string, user: string) => {
       return await runClaude(`${system}\n\n${user}`);
-    }).catch(() => {});
+    }).catch((err) => {
+      console.error('[Feedback] Fire-and-forget rule extraction failed:', err);
+    });
 
     return NextResponse.json({ ok: true });
   } catch (error) {

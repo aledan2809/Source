@@ -1,0 +1,100 @@
+{
+  "id": "7e474467-e823-4a61-b37b-541b7238e420",
+  "createdAt": "2026-03-19T11:47:27.249Z",
+  "updatedAt": "2026-03-19T11:48:24.385Z",
+  "spec": {
+    "description": "ATV nou pe benzina pentru adult, 250cc, pentru moto-cross u?or",
+    "type": "cumparare",
+    "condition": "nou",
+    "zone": "local",
+    "zoneLocation": "Bucure?ti",
+    "quantity": 1,
+    "unit": "buca?i",
+    "deadline": "1 saptam�na",
+    "budgetMin": 2000,
+    "budgetMax": 5000,
+    "currency": "EUR"
+  },
+  "result": {
+    "summary": "Cerere de achiziție pentru 1 ATV nou, 250cc, pe benzină, destinat utilizării moto-cross ușor de către adult. Zona de livrare: București. Buget: 2.000 - 5.000 EUR. Termen: 1 săptămână.",
+    "suppliers": [
+      {
+        "name": "ATV Romania",
+        "website": "",
+        "email": "comenzi@atv-romania.ro",
+        "phone": "+40 731 331 332",
+        "country": "România",
+        "priceMin": 2500,
+        "priceMax": 4500,
+        "priceCurrency": "EUR",
+        "notes": "Importator specializat în ATV-uri și quad-uri. Gamă variată de modele 250cc pentru adulți, livrare rapidă în București.",
+        "productUrl": "",
+        "urlVerified": false,
+        "urlSource": "unverified"
+      },
+      {
+        "name": "Moto24",
+        "website": "https://www.moto24.ro",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "priceMin": 2000,
+        "priceMax": 4000,
+        "priceCurrency": "EUR",
+        "notes": "Magazine online cu gamă diversificată de ATV-uri. Prețuri competitive pentru modele entry-level și mid-range.",
+        "urlVerified": true,
+        "urlSource": "verified"
+      },
+      {
+        "name": "Quad Store Romania",
+        "website": "",
+        "email": "",
+        "phone": "",
+        "country": "România",
+        "priceMin": 2200,
+        "priceMax": 4800,
+        "priceCurrency": "EUR",
+        "notes": "Dealer autorizat pentru mai multe branduri de ATV-uri. Service și piese de schimb disponibile.",
+        "productUrl": "",
+        "urlVerified": false,
+        "urlSource": "unverified"
+      },
+      {
+        "name": "eMAG Marketplace",
+        "website": "",
+        "email": "",
+        "phone": "0371 781 781",
+        "country": "România",
+        "priceMin": 2000,
+        "priceMax": 4500,
+        "priceCurrency": "EUR",
+        "notes": "Marketplace cu mai mulți vânzători de ATV-uri. Avantaj: livrare rapidă prin rețeaua eMAG, posibilitate retur.",
+        "productUrl": "",
+        "urlVerified": false,
+        "urlSource": "unverified"
+      }
+    ],
+    "rfq": "CERERE DE OFERTĂ (RFQ)\n\n================================================================================\nINFORMAȚII SOLICITANT\n================================================================================\nData emiterii: 19.03.2026\nTermen limită răspuns: 25.03.2026\nReferință: RFQ-ATV-2026-001\n\n================================================================================\nOBIECTUL ACHIZIȚIEI\n================================================================================\n\nProdus solicitat: ATV (All-Terrain Vehicle)\nCantitate: 1 bucată\nCondiție: NOU\n\nSpecificații tehnice obligatorii:\n- Capacitate cilindrică: 250cc\n- Alimentare: Benzină\n- Destinație: Adult (greutate utilizator până la 100kg)\n- Utilizare: Moto-cross ușor / off-road recreațional\n- Transmisie: Preferabil automată sau semi-automată\n- Pornire: Electrică (de preferat cu backup kick-start)\n\nSpecificații dorite (opționale):\n- Suspensii reglabile\n- Protecții incluse (mâini, șasiu)\n- Faruri LED\n- Vitezometru digital\n\n================================================================================\nCONDIȚII COMERCIALE\n================================================================================\n\nBuget alocat: 2.000 - 5.000 EUR (TVA inclus)\nLocație livrare: București, România\nTermen livrare solicitat: Maxim 7 zile calendaristice de la confirmare comandă\n\nCondiții de plată acceptate:\n- Plată integrală la livrare\n- Avans + rest la livrare\n- Rate (dacă este disponibil)\n\n================================================================================\nINFORMAȚII SOLICITATE ÎN OFERTĂ\n================================================================================\n\n1. Denumire completă produs și brand/model\n2. Preț unitar (cu TVA separat)\n3. Specificații tehnice detaliate\n4. Termen de livrare garantat\n5. Perioadă și condiții garanție\n6. Disponibilitate piese de schimb și service\n7. Certificări și omologări (dacă este cazul)\n8. Fotografii produs\n\n================================================================================\nCRITERII DE EVALUARE\n================================================================================\n\n- Preț: 40%\n- Specificații tehnice și calitate: 30%\n- Garanție și service: 20%\n- Termen de livrare: 10%\n\n================================================================================\nMOD DE TRANSMITERE OFERTĂ\n================================================================================\n\nOfertele se transmit prin email până la data de 25.03.2026.\nPentru clarificări suplimentare, nu ezitați să ne contactați.\n\nVă mulțumim pentru colaborare!",
+    "emails": [
+      {
+        "to": "comenzi@atv-romania.ro",
+        "subject": "Cerere de ofertă - ATV 250cc nou pentru adult",
+        "body": "Bună ziua,\n\nNe adresăm dumneavoastră cu o cerere de ofertă pentru achiziția unui ATV nou.\n\nDetalii solicitare:\n- Tip: ATV 250cc pe benzină\n- Condiție: Nou\n- Utilizare: Adult, moto-cross ușor / off-road recreațional\n- Cantitate: 1 bucată\n- Buget: 2.000 - 5.000 EUR (TVA inclus)\n- Locație livrare: București\n- Termen dorit: Maxim 7 zile\n\nVă rugăm să ne transmiteți:\n1. Modelele disponibile în acest buget cu specificații complete\n2. Prețuri cu TVA inclus\n3. Termen de livrare\n4. Condiții garanție și service\n5. Opțiuni de plată\n\nAșteptăm oferta dumneavoastră până pe 25.03.2026.\n\nVă mulțumim,\nCu stimă"
+      },
+      {
+        "to": "contact@moto24.ro",
+        "subject": "Solicitare ofertă - ATV 250cc nou",
+        "body": "Bună ziua,\n\nSuntem interesați de achiziția unui ATV nou și vă contactăm pentru o ofertă.\n\nCerințe:\n- ATV 250cc, benzină\n- Condiție: Nou\n- Pentru adult, utilizare off-road recreațional\n- Buget: 2.000 - 5.000 EUR\n- Livrare: București, în maxim 7 zile\n\nVă rugăm să ne comunicați modelele disponibile, prețurile și condițiile de achiziție.\n\nMulțumim anticipat,\nCu respect"
+      },
+      {
+        "to": "contact@quadstore.ro",
+        "subject": "Cerere ofertă ATV 250cc - București",
+        "body": "Bună ziua,\n\nDoresc să achiziționez un ATV nou și vă solicit o ofertă.\n\nSpecificații căutate:\n- Capacitate: 250cc\n- Combustibil: Benzină\n- Stare: Nou\n- Utilizator: Adult\n- Scop: Moto-cross ușor, off-road\n- Buget maxim: 5.000 EUR\n- Locație: București\n- Urgență: Livrare în maxim 1 săptămână\n\nAștept detalii despre modelele disponibile, prețuri și garanție.\n\nMulțumesc,\nO zi bună"
+      }
+    ],
+    "brief": "# BRIEF SOURCING - ATV 250cc\n\n## Rezumat Executiv\nAchiziție ATV nou, 250cc benzină, pentru adult. Utilizare: moto-cross ușor. Buget: 2.000-5.000 EUR. Livrare București, termen 1 săptămână.\n\n## Specificații Tehnice\n| Parametru | Valoare |\n|-----------|--------|\n| Tip vehicul | ATV / Quad |\n| Cilindree | 250cc |\n| Combustibil | Benzină |\n| Condiție | Nou |\n| Utilizator | Adult |\n| Scop | Off-road recreațional |\n\n## Parametri Comerciali\n- **Buget:** 2.000 - 5.000 EUR (TVA inclus)\n- **Cantitate:** 1 bucată\n- **Zonă livrare:** București\n- **Deadline:** 1 săptămână\n- **Tip tranzacție:** Cumpărare\n\n## Furnizori Identificați\n1. **ATV Romania** - Specialist în ATV-uri, livrare rapidă\n2. **Moto24** - Prețuri competitive\n3. **Quad Store Romania** - Service și piese disponibile\n4. **eMAG Marketplace** - Livrare rapidă, opțiune retur\n\n## Pași Următori\n1. Transmitere RFQ către furnizori (19.03.2026)\n2. Colectare oferte (până la 25.03.2026)\n3. Evaluare și negociere (25-26.03.2026)\n4. Plasare comandă (26.03.2026)\n5. Livrare estimată (până la 28.03.2026)\n\n## Observații\n- ATV-urile 250cc în acest buget sunt de regulă branduri chinezești (Linhai, TGB, CF Moto) sau modele entry-level europene\n- Se recomandă verificarea disponibilității pieselor de schimb\n- Pentru înmatriculare este necesară omologare RAR"
+  },
+  "status": "pending_validation",
+  "refinements": 0,
+  "satisfied": false
+}

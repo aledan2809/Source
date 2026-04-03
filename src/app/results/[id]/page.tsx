@@ -609,7 +609,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3 text-sm">
                   <span className="text-green-500">👍 Marcat ca util</span>
-                  {data.userFeedback && <span className="text-gray-500">— "{data.userFeedback}"</span>}
+                  {data.userFeedback && <span className="text-gray-500">&mdash; &ldquo;{data.userFeedback}&rdquo;</span>}
                 </div>
                 <span className="text-xs text-gray-600">
                   <button onClick={() => router.push('/dashboard')} className="text-orange-400 hover:text-orange-300 underline">Dashboard</button>
@@ -632,7 +632,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3 text-sm">
                   <span className="text-red-400">👎 Marcat ca nesatisfăcător</span>
-                  {data.userFeedback && <span className="text-gray-500">— "{data.userFeedback}"</span>}
+                  {data.userFeedback && <span className="text-gray-500">&mdash; &ldquo;{data.userFeedback}&rdquo;</span>}
                 </div>
                 <span className="text-xs text-gray-600">
                   <button onClick={() => router.push('/dashboard')} className="text-orange-400 hover:text-orange-300 underline">Dashboard</button>

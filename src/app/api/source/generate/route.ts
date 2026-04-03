@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, mkdir, readFile } from 'fs/promises';
-import path from 'path';
 import { randomUUID } from 'crypto';
 import { runClaude, runClaudeWithQualityRetry, runAI, CLAUDE_TIMEOUTS } from '@/lib/claude';
 import type { AIProviderSelection } from '@/lib/claude';
-import { safeUpdateJSON, safeWriteJSON, DATA_PATHS, getResultPath } from '@/lib/file-operations';
+import { safeReadJSON, safeUpdateJSON, safeWriteJSON, DATA_PATHS, getResultPath } from '@/lib/file-operations';
 import { validateFormData, checkRateLimit } from '@/lib/validation';
 import { validateSourcing } from '@/lib/guardrails';
 import { createPipeline, transition, computeQualityScore, STAGES, EVENTS, type PipelineState } from '@/lib/pipeline';
@@ -161,7 +159,10 @@ async function searchGoogleCSE(
   query: string,
   siteRestrict?: string
 ): Promise<string | null> {
-  if (!GOOGLE_CSE_API_KEY || !GOOGLE_CSE_CX) return null;
+  if (!GOOGLE_CSE_API_KEY || !GOOGLE_CSE_CX) {
+    console.warn('[Generate] Google CSE disabled — GOOGLE_CSE_API_KEY or GOOGLE_CSE_CX not set');
+    return null;
+  }
 
   const searchQuery = siteRestrict ? `site:${siteRestrict} ${query}` : query;
   const url = `https://www.googleapis.com/customsearch/v1?key=${GOOGLE_CSE_API_KEY}&cx=${GOOGLE_CSE_CX}&q=${encodeURIComponent(searchQuery)}&num=10`;
@@ -721,15 +722,11 @@ interface ConfirmedSpec {
 
 // Load AI learning patterns from disk
 async function loadLearnings(): Promise<string> {
-  try {
-    const p = path.join(process.cwd(), 'src', 'data', 'ai-learnings.json');
-    const raw = await readFile(p, 'utf-8');
-    const data = JSON.parse(raw) as { patterns: string[] };
-    if (data.patterns?.length > 0) {
-      return '\n\nÎNVĂȚĂMINTE DIN CĂUTĂRI ANTERIOARE (aplică aceste preferințe):\n' +
-        data.patterns.slice(-10).map((p: string) => `- ${p}`).join('\n');
-    }
-  } catch { /* no learnings yet */ }
+  const data = await safeReadJSON<{ patterns: string[] }>(DATA_PATHS.AI_LEARNINGS, { patterns: [] });
+  if (data.patterns?.length > 0) {
+    return '\n\nÎNVĂȚĂMINTE DIN CĂUTĂRI ANTERIOARE (aplică aceste preferințe):\n' +
+      data.patterns.slice(-10).map((p: string) => `- ${p}`).join('\n');
+  }
   return '';
 }
 
@@ -879,7 +876,7 @@ ${userContent}`;
 
     // Create entry immediately with 'processing' status
     const id = spec.searchId || randomUUID();
-    await mkdir(DATA_PATHS.RESULTS_DIR, { recursive: true });
+    // Directory creation is handled by safeWriteJSON below
 
     const createdAt = new Date().toISOString();
     const processingEntry = {
@@ -1228,14 +1225,18 @@ ${userContent}`;
       });
       await safeWriteJSON(getResultPath(id), logEntry);
     }).catch(async (err) => {
-      const errorEntry = { ...processingEntry, status: 'error', error: err.message, updatedAt: new Date().toISOString() };
-      await safeWriteJSON(getResultPath(id), errorEntry);
-      await safeUpdateJSON(DATA_PATHS.SEARCH_LOG, [], (log: Record<string, unknown>[]) => {
-        const idx = log.findIndex((e: Record<string, unknown>) => e.id === id);
-        if (idx >= 0) log[idx] = errorEntry; else log.push(errorEntry);
-        return log;
-      });
-      console.error('Background generate error:', err);
+      console.error('[Generate] Background generate error:', err);
+      try {
+        const errorEntry = { ...processingEntry, status: 'error', error: err instanceof Error ? err.message : String(err), updatedAt: new Date().toISOString() };
+        await safeWriteJSON(getResultPath(id), errorEntry);
+        await safeUpdateJSON(DATA_PATHS.SEARCH_LOG, [], (log: Record<string, unknown>[]) => {
+          const idx = log.findIndex((e: Record<string, unknown>) => e.id === id);
+          if (idx >= 0) log[idx] = errorEntry; else log.push(errorEntry);
+          return log;
+        });
+      } catch (writeErr) {
+        console.error('[Generate] Failed to persist error state:', writeErr);
+      }
     });
 
     return NextResponse.json({ id });
