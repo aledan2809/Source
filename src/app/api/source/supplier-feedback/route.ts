@@ -3,6 +3,21 @@ import { recordSupplierFeedback, analyzeAndExtractRules } from '@/lib/learnings'
 import { runClaude } from '@/lib/claude';
 import { safeReadJSON, getResultPath } from '@/lib/file-operations';
 
+const SUPPLIER_FEEDBACK_RATE_MAX = 20;
+const SUPPLIER_FEEDBACK_RATE_WINDOW_MS = 60_000;
+const supplierFeedbackCounters = new Map<string, { count: number; resetAt: number }>();
+function checkSupplierFeedbackRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = supplierFeedbackCounters.get(ip);
+  if (!entry || entry.resetAt < now) {
+    supplierFeedbackCounters.set(ip, { count: 1, resetAt: now + SUPPLIER_FEEDBACK_RATE_WINDOW_MS });
+    return true;
+  }
+  if (entry.count >= SUPPLIER_FEEDBACK_RATE_MAX) return false;
+  entry.count++;
+  return true;
+}
+
 /**
  * POST /api/source/supplier-feedback
  *
@@ -13,6 +28,11 @@ import { safeReadJSON, getResultPath } from '@/lib/file-operations';
  * (Result-level feedback is handled by /api/source/feedback)
  */
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'local';
+  if (!checkSupplierFeedbackRateLimit(ip)) {
+    return NextResponse.json({ error: 'Too many requests — try again in a minute' }, { status: 429 });
+  }
+
   try {
     const body = await request.json();
     const { searchId, supplierIndex, rating, comment, feedbackType = 'product' } = body;

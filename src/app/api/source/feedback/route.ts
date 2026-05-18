@@ -3,6 +3,21 @@ import { safeUpdateJSON, safeReadJSON, safeWriteJSON, DATA_PATHS, getResultPath 
 import { recordSupplierFeedback, analyzeAndExtractRules } from '@/lib/learnings';
 import { runClaude } from '@/lib/claude';
 
+const FEEDBACK_RATE_MAX = 20;
+const FEEDBACK_RATE_WINDOW_MS = 60_000;
+const feedbackCounters = new Map<string, { count: number; resetAt: number }>();
+function checkFeedbackRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = feedbackCounters.get(ip);
+  if (!entry || entry.resetAt < now) {
+    feedbackCounters.set(ip, { count: 1, resetAt: now + FEEDBACK_RATE_WINDOW_MS });
+    return true;
+  }
+  if (entry.count >= FEEDBACK_RATE_MAX) return false;
+  entry.count++;
+  return true;
+}
+
 interface FeedbackPayload {
   searchId: string;
   satisfied: boolean;
@@ -10,6 +25,11 @@ interface FeedbackPayload {
 }
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'local';
+  if (!checkFeedbackRateLimit(ip)) {
+    return NextResponse.json({ error: 'Too many requests — try again in a minute' }, { status: 429 });
+  }
+
   try {
     const { searchId, satisfied, feedback }: FeedbackPayload = await request.json();
 

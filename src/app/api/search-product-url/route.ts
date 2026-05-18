@@ -1,5 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+const SEARCH_RATE_MAX = 10;
+const SEARCH_RATE_WINDOW_MS = 60_000;
+const searchCounters = new Map<string, { count: number; resetAt: number }>();
+function checkSearchRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = searchCounters.get(ip);
+  if (!entry || entry.resetAt < now) {
+    searchCounters.set(ip, { count: 1, resetAt: now + SEARCH_RATE_WINDOW_MS });
+    return true;
+  }
+  if (entry.count >= SEARCH_RATE_MAX) return false;
+  entry.count++;
+  return true;
+}
+
 const GOOGLE_CSE_API_KEY = process.env.GOOGLE_CSE_API_KEY || '';
 const GOOGLE_CSE_CX = process.env.GOOGLE_CSE_CX || '';
 
@@ -297,6 +312,10 @@ async function siteCrawlSearch(
  * Returns: { results: [{ productUrl, title, snippet, source }] }
  */
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'local';
+  if (!checkSearchRateLimit(ip)) {
+    return NextResponse.json({ error: 'Too many requests — try again in a minute' }, { status: 429 });
+  }
   try {
     const body = await request.json();
 

@@ -5,10 +5,30 @@
 import { AIRouter, getProjectPreset, ALL_PROVIDER_IDS, getProviderConfig } from 'ai-router';
 import { NextRequest } from 'next/server';
 
+const AI_RATE_MAX = 20;
+const AI_RATE_WINDOW_MS = 60_000;
+const aiCounters = new Map<string, { count: number; resetAt: number }>();
+function checkAIRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = aiCounters.get(ip);
+  if (!entry || entry.resetAt < now) {
+    aiCounters.set(ip, { count: 1, resetAt: now + AI_RATE_WINDOW_MS });
+    return true;
+  }
+  if (entry.count >= AI_RATE_MAX) return false;
+  entry.count++;
+  return true;
+}
+
 const preset = getProjectPreset('source');
 const router = new AIRouter({ ...preset });
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'local';
+  if (!checkAIRateLimit(ip)) {
+    return Response.json({ error: 'Too many requests — try again in a minute' }, { status: 429 });
+  }
+
   try {
     const body = await request.json();
     const {

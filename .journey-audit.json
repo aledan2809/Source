@@ -1,0 +1,12 @@
+{
+  "name": "source",
+  "baseUrl": "http://localhost:3030",
+  "navLinks": [
+    { "name": "Home", "href": "/" }
+  ],
+  "emptyStateMarkers": "No results|empty|Niciun|Nu exista",
+  "errorMarkers": "error|failed|eroare|crashed",
+  "viewport": { "width": 1440, "height": 900 },
+  "pageTimeout": 20000,
+  "settleDelay": 2000
+}
