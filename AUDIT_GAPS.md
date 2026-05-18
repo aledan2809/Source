@@ -5,10 +5,10 @@ Last Updated: 2026-05-18
 
 | ID | Severitate | Descriere | Status | Commit | Data |
 |----|-----------|-----------|--------|--------|------|
-| G-SRC-001 | P1 | Lipsă rate limiting pe /api/ai (AI calls costisitoare) | Eliminated | pending | 2026-05-18 |
-| G-SRC-002 | P1 | Lipsă rate limiting pe /api/search-product-url (external API calls) | Eliminated | pending | 2026-05-18 |
-| G-SRC-003 | P2 | Lipsă rate limiting pe /api/source/feedback (write operation) | Eliminated | pending | 2026-05-18 |
-| G-SRC-004 | P2 | Lipsă rate limiting pe /api/source/supplier-feedback (write operation) | Eliminated | pending | 2026-05-18 |
+| G-SRC-001 | P1 | Lipsă rate limiting pe /api/ai (AI calls costisitoare) | Eliminated | 4740a38 | 2026-05-18 |
+| G-SRC-002 | P1 | Lipsă rate limiting pe /api/search-product-url (external API calls) | Eliminated | 4740a38 | 2026-05-18 |
+| G-SRC-003 | P2 | Lipsă rate limiting pe /api/source/feedback (write operation) | Eliminated | 4740a38 | 2026-05-18 |
+| G-SRC-004 | P2 | Lipsă rate limiting pe /api/source/supplier-feedback (write operation) | Eliminated | 4740a38 | 2026-05-18 |
 
 ## Open Gaps
 
