@@ -5,7 +5,7 @@
  * a context block that gets injected into the AI prompt for generate.
  */
 
-import { safeReadJSON, safeUpdateJSON, DATA_PATHS } from './file-operations';
+import { safeReadJSON, safeUpdateJSON } from './file-operations';
 import { logger } from './logger';
 import path from 'path';
 
@@ -95,7 +95,7 @@ export async function recordSupplierFeedback(feedback: SupplierFeedback): Promis
  * Generate learning context for AI prompt injection.
  * Returns a formatted string that gets appended to the generate prompt.
  */
-export async function generateLearningContext(productDescription: string): Promise<string> {
+export async function generateLearningContext(_productDescription: string): Promise<string> {
   const data = await safeReadJSON<LearningsData>(LEARNINGS_PATH, DEFAULT_LEARNINGS);
 
   const sections: string[] = [];

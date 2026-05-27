@@ -113,7 +113,6 @@ const NEMO_URL = process.env.NEMO_URL || 'http://localhost:7779';
 const NEMO_TIMEOUT = 8000;
 
 // Track NeMo process so we only spawn once
-let nemoProcess: import('child_process').ChildProcess | null = null;
 let nemoStarting = false;
 let nemoHealthy = false;
 let lastHealthCheck = 0;
@@ -180,12 +179,9 @@ async function ensureNemoRunning(): Promise<void> {
       env: { ...process.env },
     });
 
-    nemoProcess = proc;
-
     // Catch spawn errors so they don't crash the main process
     proc.on('error', (err) => {
       console.warn(`[NeMo] Failed to spawn: ${err.message}`);
-      nemoProcess = null;
       nemoStarting = false;
     });
 
@@ -204,7 +200,6 @@ async function ensureNemoRunning(): Promise<void> {
 
     proc.on('exit', (code) => {
       console.log(`[NeMo] Process exited with code ${code}`);
-      nemoProcess = null;
       nemoHealthy = false;
       nemoStarting = false;
     });
@@ -222,7 +217,6 @@ async function ensureNemoRunning(): Promise<void> {
     console.warn('[NeMo] Service did not become healthy within 8s — will use local fallback');
   } catch (err) {
     console.warn('[NeMo] Failed to start:', err instanceof Error ? err.message : err);
-    nemoProcess = null;
   }
 
   nemoStarting = false;

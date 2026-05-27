@@ -266,7 +266,7 @@ interface DiscoveryOptions {
  * and returns real supplier data for AI compilation.
  */
 export async function discoverRealSuppliers(options: DiscoveryOptions): Promise<DiscoveredSupplier[]> {
-  const { description, zone, zoneLocation, type, minSuppliers = 3, maxSuppliers = 8 } = options;
+  const { description, zone, zoneLocation, type, maxSuppliers = 8 } = options;
 
   const zoneText = zone === 'local'
     ? (zoneLocation || 'București Romania')
@@ -469,7 +469,7 @@ export async function discoverRealSuppliers(options: DiscoveryOptions): Promise<
  * 4. We reject suppliers with non-responding websites
  */
 async function aiAssistedDiscovery(options: DiscoveryOptions): Promise<DiscoveredSupplier[]> {
-  const { description, zone, zoneLocation, type } = options;
+  const { description, zone, zoneLocation } = options;
 
   const zoneText = zone === 'local'
     ? (zoneLocation || 'București')

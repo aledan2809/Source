@@ -29,8 +29,6 @@ const VALID_TYPES = ['cumparare', 'inchiriere'] as const;
 const VALID_CONDITIONS = ['nou', 'second-hand', 'indiferent'] as const;
 const VALID_ZONES = ['local', 'regional', 'global'] as const;
 const VALID_CURRENCIES = ['RON', 'EUR', 'USD', 'GBP'] as const;
-const VALID_DEADLINES = ['ASAP', '1-saptamana', '2-saptamani', '1-luna', '3-luni', 'fara-urgenta'] as const;
-
 // Display text variants that may come from stored results or refinements
 const DEADLINE_DISPLAY_MAP: Record<string, string> = {
   'ASAP': 'ASAP',

@@ -40,6 +40,19 @@ export function middleware(request: NextRequest) {
   const providedToken = authHeader?.replace('Bearer ', '') || urlToken || cookieToken;
 
   if (providedToken === requiredToken) {
+    // If token came from URL param, redirect to strip it (prevents token in logs/history)
+    if (urlToken && !cookieToken) {
+      const cleanUrl = new URL(request.url);
+      cleanUrl.searchParams.delete('token');
+      const response = NextResponse.redirect(cleanUrl);
+      response.cookies.set('access-token', providedToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24 * 7, // 7 days
+      });
+      return response;
+    }
     // Valid token - set cookie for future requests if not present
     const response = NextResponse.next();
     if (!cookieToken) {

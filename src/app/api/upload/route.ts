@@ -34,7 +34,10 @@ export async function POST(request: NextRequest) {
     }
     const formData = await request.formData();
     const files = formData.getAll('files') as File[];
-    const sessionId = (formData.get('sessionId') as string) || randomUUID();
+    const rawSessionId = formData.get('sessionId') as string | null;
+    // Validate sessionId is a proper UUID to prevent path traversal
+    const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const sessionId = (rawSessionId && UUID_RE.test(rawSessionId)) ? rawSessionId : randomUUID();
 
     if (!files || files.length === 0) {
       return NextResponse.json(

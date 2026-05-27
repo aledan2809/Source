@@ -105,17 +105,20 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
   const [cardFeedbackSent, setCardFeedbackSent] = useState<Record<FeedbackKey, boolean>>({});
 
   // Timer — calculated from data.updatedAt (when processing actually started on server)
+  const updatedAt = data?.updatedAt;
   useEffect(() => {
     if (!polling || !data) { setElapsedSeconds(0); return; }
-    const serverStart = data.updatedAt ? new Date(data.updatedAt).getTime() : Date.now();
+    const serverStart = updatedAt ? new Date(updatedAt).getTime() : Date.now();
     const tick = () => setElapsedSeconds(Math.max(0, Math.floor((Date.now() - serverStart) / 1000)));
     tick(); // immediate
     const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
-  }, [polling, data?.updatedAt]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [polling, updatedAt]);
 
   useEffect(() => {
     fetchResults();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resolvedParams.id]);
 
   async function fetchResults() {

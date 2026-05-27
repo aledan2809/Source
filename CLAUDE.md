@@ -148,3 +148,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3030
 2. All development goes through AI Pipeline mesh
 3. Update knowledge/ after every significant feature
 4. Port: **3030**
+
+
+## Governance Reference
+See: `Master/knowledge/MASTER_SYSTEM.md` §1-§5. This project follows Master governance; do not duplicate rules.

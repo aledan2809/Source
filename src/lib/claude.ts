@@ -81,7 +81,6 @@ export async function runClaudeWithQualityRetry(
 ): Promise<string> {
   const maxRetries = options?.maxProviderRetries ?? 2;
   const triedProviders: string[] = [];
-  const availableProviders = router.getAvailableProviders();
 
   let lastContent = '';
 

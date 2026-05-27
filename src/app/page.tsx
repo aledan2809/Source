@@ -129,6 +129,7 @@ export default function SourcingForm() {
     setDragActive(false);
     const droppedFiles = Array.from(e.dataTransfer.files);
     handleFileUpload(droppedFiles);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
