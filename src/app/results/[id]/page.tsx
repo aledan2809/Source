@@ -103,6 +103,8 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
   const [cardComments, setCardComments] = useState<Record<FeedbackKey, string>>({});
   const [cardCommentOpen, setCardCommentOpen] = useState<Record<FeedbackKey, boolean>>({});
   const [cardFeedbackSent, setCardFeedbackSent] = useState<Record<FeedbackKey, boolean>>({});
+  const [emailStatus, setEmailStatus] = useState<Record<number, 'sending' | 'sent' | 'failed'>>({});
+  const [sendBanner, setSendBanner] = useState<string | null>(null);
 
   // Timer — calculated from data.updatedAt (when processing actually started on server)
   const updatedAt = data?.updatedAt;
@@ -175,6 +177,69 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
     await navigator.clipboard.writeText(text);
     setCopiedText(label);
     setTimeout(() => setCopiedText(null), 2000);
+  }
+
+  // Send one or more generated RFQ emails via the server (/api/rfq/send).
+  async function sendRfqEmails(indices: number[]) {
+    if (!data) return;
+    const valid = indices.filter((i) => {
+      const e = data.result.emails[i];
+      return e && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((e.to || '').trim());
+    });
+    if (valid.length === 0) {
+      setSendBanner('Niciun destinatar cu email valid');
+      return;
+    }
+    setEmailStatus((prev) => {
+      const next = { ...prev };
+      valid.forEach((i) => (next[i] = 'sending'));
+      return next;
+    });
+    setSendBanner(null);
+    try {
+      const res = await fetch('/api/rfq/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          resultId: data.id,
+          source: 'sourcing',
+          emails: valid.map((i) => data.result.emails[i]),
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setSendBanner(json.error || 'Eroare la trimitere');
+        setEmailStatus((prev) => {
+          const next = { ...prev };
+          valid.forEach((i) => (next[i] = 'failed'));
+          return next;
+        });
+        return;
+      }
+      setEmailStatus((prev) => {
+        const next = { ...prev };
+        valid.forEach((i) => {
+          const r = (json.results || []).find(
+            (x: { to: string; status: string }) => x.to === data.result.emails[i].to.trim()
+          );
+          next[i] = r?.status === 'sent' ? 'sent' : 'failed';
+        });
+        return next;
+      });
+      setSendBanner(
+        `${json.sent} trimise${json.failed ? `, ${json.failed} eșuate` : ''}` +
+          (json.smtpConfigured
+            ? ''
+            : ' — ⚠️ SMTP neconfigurat (mod test: emailurile au fost doar logate în consolă, NU trimise real)')
+      );
+    } catch {
+      setSendBanner('Eroare de rețea la trimitere');
+      setEmailStatus((prev) => {
+        const next = { ...prev };
+        valid.forEach((i) => (next[i] = 'failed'));
+        return next;
+      });
+    }
   }
 
   function downloadAsFile(content: string, filename: string) {
@@ -1065,32 +1130,71 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
 
         {activeTab === 'emailuri' && (
           <div className="space-y-4">
-            {data.result.emails.map((email, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 rounded-xl border border-gray-800 p-6"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="text-sm text-gray-400 mb-1">Către: {email.to}</div>
-                    <div className="text-lg font-semibold text-white">{email.subject}</div>
-                  </div>
-                  <button
-                    onClick={() => copyToClipboard(email.body, `email-body-${index}`)}
-                    className={`px-3 py-1.5 rounded-lg text-sm transition ${
-                      copiedText === `email-body-${index}`
-                        ? 'bg-green-600 text-white'
-                        : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
-                    }`}
-                  >
-                    {copiedText === `email-body-${index}` ? 'Copiat!' : 'Copiază email'}
-                  </button>
-                </div>
-                <pre className="whitespace-pre-wrap text-gray-300 text-sm leading-relaxed font-sans border-t border-gray-800 pt-4">
-                  {email.body}
-                </pre>
+            <div className="flex items-center justify-between gap-3 flex-wrap">
+              <div className="text-sm text-gray-400">
+                {data.result.emails.length} email{data.result.emails.length === 1 ? '' : 'uri'} generate
+                {sendBanner && (
+                  <span className="ml-2 text-gray-300">· {sendBanner}</span>
+                )}
               </div>
-            ))}
+              <button
+                onClick={() => sendRfqEmails(data.result.emails.map((_, i) => i))}
+                disabled={Object.values(emailStatus).includes('sending')}
+                className="px-4 py-2 rounded-lg text-sm font-medium bg-orange-600 hover:bg-orange-500 disabled:opacity-50 text-white transition"
+              >
+                Trimite toate
+              </button>
+            </div>
+            {data.result.emails.map((email, index) => {
+              const status = emailStatus[index];
+              return (
+                <div
+                  key={index}
+                  className="bg-gray-900 rounded-xl border border-gray-800 p-6"
+                >
+                  <div className="flex items-start justify-between mb-4 gap-3">
+                    <div>
+                      <div className="text-sm text-gray-400 mb-1">Către: {email.to || '(fără email)'}</div>
+                      <div className="text-lg font-semibold text-white">{email.subject}</div>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <button
+                        onClick={() => copyToClipboard(email.body, `email-body-${index}`)}
+                        className={`px-3 py-1.5 rounded-lg text-sm transition ${
+                          copiedText === `email-body-${index}`
+                            ? 'bg-green-600 text-white'
+                            : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                        }`}
+                      >
+                        {copiedText === `email-body-${index}` ? 'Copiat!' : 'Copiază'}
+                      </button>
+                      <button
+                        onClick={() => sendRfqEmails([index])}
+                        disabled={status === 'sending'}
+                        className={`px-3 py-1.5 rounded-lg text-sm transition ${
+                          status === 'sent'
+                            ? 'bg-green-600 text-white'
+                            : status === 'failed'
+                            ? 'bg-red-600 hover:bg-red-500 text-white'
+                            : 'bg-orange-600 hover:bg-orange-500 disabled:opacity-50 text-white'
+                        }`}
+                      >
+                        {status === 'sending'
+                          ? 'Se trimite…'
+                          : status === 'sent'
+                          ? 'Trimis ✓'
+                          : status === 'failed'
+                          ? 'Reîncearcă'
+                          : 'Trimite'}
+                      </button>
+                    </div>
+                  </div>
+                  <pre className="whitespace-pre-wrap text-gray-300 text-sm leading-relaxed font-sans border-t border-gray-800 pt-4">
+                    {email.body}
+                  </pre>
+                </div>
+              );
+            })}
           </div>
         )}
 

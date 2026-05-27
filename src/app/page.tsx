@@ -284,12 +284,20 @@ export default function SourcingForm() {
                 <p className="text-gray-400 text-xs">AI Sourcing Platform</p>
               </div>
             </div>
-            <button
-              onClick={() => router.push('/dashboard')}
-              className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition text-gray-300"
-            >
-              Dashboard
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => router.push('/rfq')}
+                className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition text-gray-300"
+              >
+                Trimite RFQ
+              </button>
+              <button
+                onClick={() => router.push('/dashboard')}
+                className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition text-gray-300"
+              >
+                Dashboard
+              </button>
+            </div>
           </div>
         </div>
       </header>

@@ -5,23 +5,26 @@
   "scripts": {
     "dev": "next dev -p 3030 --webpack",
     "build": "NODE_ENV=production next build",
-    "postinstall": "rm -rf node_modules/ai-router && cp -r ../AIRouter node_modules/ai-router 2>/dev/null || true",
+    "postinstall": "rm -rf node_modules/ai-router && cp -r ../AIRouter node_modules/ai-router 2>/dev/null; rm -rf node_modules/@aledan/email && mkdir -p node_modules/@aledan && cp -r ../email-service node_modules/@aledan/email && rm -rf node_modules/@aledan/email/node_modules 2>/dev/null || true",
     "start": "next start -p 3030",
     "lint": "eslint",
     "test": "npx tsx src/__tests__/api.test.ts",
     "test:ci": "npx tsx src/__tests__/api.test.ts"
   },
   "dependencies": {
+    "@aledan/email": "file:../email-service",
     "@anthropic-ai/sdk": "^0.39.0",
     "@google/genai": "^1.46.0",
     "ai-router": "file:../AIRouter",
     "next": "16.1.7",
+    "nodemailer": "^6.10.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9",
