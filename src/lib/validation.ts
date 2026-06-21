@@ -25,6 +25,10 @@ export interface ValidationError {
   message: string;
 }
 
+// Upper bounds to cap model spend per request (anti cost-abuse).
+const MAX_DESCRIPTION_LEN = 5000;
+const MAX_CLARIFICATION_ROUND = 3;
+
 const VALID_TYPES = ['cumparare', 'inchiriere'] as const;
 const VALID_CONDITIONS = ['nou', 'second-hand', 'indiferent'] as const;
 const VALID_ZONES = ['local', 'regional', 'global'] as const;
@@ -81,6 +85,9 @@ export function validateFormData(data: unknown): {
   // Required fields validation
   if (!input.description || typeof input.description !== 'string' || input.description.trim().length === 0) {
     errors.push({ field: 'description', message: 'Description is required' });
+  } else if (input.description.length > MAX_DESCRIPTION_LEN) {
+    // Cap free-text size so a single request can't drive unbounded model spend.
+    errors.push({ field: 'description', message: `Description must be at most ${MAX_DESCRIPTION_LEN} characters` });
   }
 
   // Normalize type (accepts both enum and display text from stored results)
@@ -168,7 +175,10 @@ export function validateFormData(data: unknown): {
     zoneLocation: input.zoneLocation as string | undefined,
     budgetMin: input.budgetMin ? Number(input.budgetMin) : undefined,
     budgetMax: input.budgetMax ? Number(input.budgetMax) : undefined,
-    clarificationRound: input.clarificationRound ? Number(input.clarificationRound) : undefined,
+    // Clamp the clarify-round to a sane max so each request bounds its model-call rounds.
+    clarificationRound: input.clarificationRound
+      ? Math.min(Number(input.clarificationRound), MAX_CLARIFICATION_ROUND)
+      : undefined,
     filePaths: input.filePaths as string[] | undefined,
     previousQuestions: input.previousQuestions as string[] | undefined,
     previousAnswers: input.previousAnswers as string[] | undefined,

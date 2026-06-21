@@ -16,7 +16,8 @@ interface SendPayload {
   emails: OutgoingEmail[];
   resultId?: string;
   source?: 'sourcing' | 'manual';
-  from?: string;
+  // NOTE: a caller-supplied `from` is intentionally NOT accepted — the sender is
+  // always forced to defaultFrom() (env) to prevent spoofing through the verified domain.
 }
 
 const MAX_EMAILS_PER_REQUEST = 50;
@@ -52,7 +53,8 @@ export async function POST(request: NextRequest) {
   let failed = 0;
 
   for (const e of emails) {
-    const res = await sendRfqEmail({ to: e.to, subject: e.subject, body: e.body, from: payload.from });
+    // `from` is always forced to the env-configured sender — never trust the caller (anti-spoof).
+    const res = await sendRfqEmail({ to: e.to, subject: e.subject, body: e.body });
     if (res.ok) sent++;
     else failed++;
     records.push({
