@@ -10,9 +10,13 @@ Sursă: `source/Reports/INTROSPECTION-2026-06-20/`
 
 - [ ] 🔴 **Configurează `SERPER_API_KEY`** (gratuit 2500/lună) — căutarea web (feature-ul CENTRAL de descoperire furnizori) rulează degradat fără ea.
   - 🗣️ *Pe înțelesul tău:* Fără cheia gratuită de căutare, funcția principală — găsirea de furnizori pe web — merge prost. După setare (gratis), descoperirea furnizorilor funcționează la capacitate.
-- [ ] 🟡 **RFQ-send acceptă orice `to`+`from`** (spam/spoofing) — aprobă întărire (allowlist/verificare).
-  - 🗣️ *Pe înțelesul tău:* Trimiterea de cereri de ofertă acceptă orice expeditor și destinatar, deci poate fi folosită pentru spam sau falsificare. După întărire, doar adrese verificate pot trimite.
-- [ ] 🟡 **App publică implicit** (fără `ACCESS_TOKEN`) — setează dacă portul 3030 ar putea fi expus.
+- [~] 🔴 **E-mailurile către furnizori — doar prin căsuță proprie** (strategia e-mail, Pasul 0, 2026-10-01, commit `6c1f03a`, **nedeployat**).
+  Codul nu mai trimite prin contul Resend comun; până există o căsuță proprie, trimiterea e oprită și omul vede „poți copia mesajul". Expeditorul era deja impus de server (nu se mai poate alege din exterior).
+  - [ ] Deploy pe VPS2 (`/var/www/source`, rebuild + restart) — până atunci aplicația publică încă poate trimite prin Resend.
+  - [ ] Decide căsuța proprie pentru cererile de ofertă (de preferat **nu** pe techbiz.ae — prospectarea strică reputația întregului domeniu) și setează `OUTREACH_SMTP_HOST/PORT/USER/PASS/FROM` în `/var/www/source/.env.local`.
+  - [ ] Scoate `SMTP_HOST/PORT/USER/PASS` + `EMAIL_FROM` din `.env.local` pe VPS2 — țin cheia Resend comună și nu mai sunt citite.
+  - 🗣️ *Pe înțelesul tău:* Cererile de ofertă către furnizori nu mai pleacă prin serviciul de e-mail comun al tuturor aplicațiilor (care risca suspendarea). Până îi dăm Source o căsuță a ei, butonul „Trimite" e oprit și poți copia mesajul ca să-l trimiți tu.
+- [ ] 🔴 **App publică pe VPS2** (fără `ACCESS_TOKEN`) — **verificat 2026-10-01: portul 3030 E expus** (UFW `ALLOW Anywhere`). Setează `ACCESS_TOKEN` (fără el, codul nou refuză oricum trimiterea către furnizori) și/sau închide 3030 în UFW. Vezi `AUDIT_GAPS.md` G-SRC-007.
   - 🗣️ *Pe înțelesul tău:* Aplicația n-are parolă, deci oricine ajunge la ea o poate folosi. După setarea unui token de acces, doar tu intri dacă cumva ajunge expusă online.
 - [ ] 🟡 **`npm audit fix`** (7 vulns, 1 critic/4 high, protobufjs+ws tranzitive) + doc-lift (STRATEGY/CONTEXT lipsă).
   - 🗣️ *Pe înțelesul tău:* Sunt 7 vulnerabilități în biblioteci și lipsește documentația de bază. După fix, e sigur și ai descrierea proiectului.
