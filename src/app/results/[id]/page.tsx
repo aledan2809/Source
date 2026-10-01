@@ -211,7 +211,12 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
         setSendBanner(json.error || 'Eroare la trimitere');
         setEmailStatus((prev) => {
           const next = { ...prev };
-          valid.forEach((i) => (next[i] = 'failed'));
+          // Refused up front (no own mailbox yet): nothing was attempted, so the
+          // buttons go back to normal instead of showing "Reîncearcă".
+          valid.forEach((i) => {
+            if (json.blocked) delete next[i];
+            else next[i] = 'failed';
+          });
           return next;
         });
         return;
@@ -226,12 +231,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
         });
         return next;
       });
-      setSendBanner(
-        `${json.sent} trimise${json.failed ? `, ${json.failed} eșuate` : ''}` +
-          (json.smtpConfigured
-            ? ''
-            : ' — ⚠️ SMTP neconfigurat (mod test: emailurile au fost doar logate în consolă, NU trimise real)')
-      );
+      setSendBanner(`${json.sent} trimise${json.failed ? `, ${json.failed} eșuate` : ''}`);
     } catch {
       setSendBanner('Eroare de rețea la trimitere');
       setEmailStatus((prev) => {

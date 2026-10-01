@@ -34,7 +34,8 @@ export default function RfqPage() {
   const [drafting, setDrafting] = useState(false);
   const [sending, setSending] = useState(false);
   const [banner, setBanner] = useState<string | null>(null);
-  const [smtpConfigured, setSmtpConfigured] = useState<boolean | null>(null);
+  const [sendingEnabled, setSendingEnabled] = useState<boolean | null>(null);
+  const [blockedMessage, setBlockedMessage] = useState('');
   const [from, setFrom] = useState('');
   const [history, setHistory] = useState<RfqSend[]>([]);
 
@@ -44,7 +45,8 @@ export default function RfqPage() {
     try {
       const res = await fetch('/api/rfq');
       const json = await res.json();
-      setSmtpConfigured(Boolean(json.smtpConfigured));
+      setSendingEnabled(Boolean(json.sendingEnabled));
+      setBlockedMessage(json.blockedMessage || '');
       setFrom(json.from || '');
       setHistory(Array.isArray(json.sends) ? json.sends : []);
     } catch {
@@ -109,12 +111,7 @@ export default function RfqPage() {
         setBanner(json.error || 'Eroare la trimitere');
         return;
       }
-      setBanner(
-        `${json.sent} trimise${json.failed ? `, ${json.failed} eșuate` : ''}` +
-          (json.smtpConfigured
-            ? ''
-            : ' — ⚠️ SMTP neconfigurat (mod test: doar logate în consolă, NU trimise real)')
-      );
+      setBanner(`${json.sent} trimise${json.failed ? `, ${json.failed} eșuate` : ''}`);
       loadHistory();
     } catch {
       setBanner('Eroare de rețea la trimitere');
@@ -138,19 +135,19 @@ export default function RfqPage() {
           Trimite cereri de ofertă pe email către furnizori, direct din platformă.
         </p>
 
-        {/* SMTP status */}
+        {/* Outreach mailbox status — supplier e-mails only leave through an own mailbox */}
         <div
           className={`mb-6 rounded-lg border px-4 py-3 text-sm ${
-            smtpConfigured === false
+            sendingEnabled === false
               ? 'border-yellow-700 bg-yellow-900/20 text-yellow-300'
               : 'border-gray-800 bg-gray-900 text-gray-300'
           }`}
         >
-          {smtpConfigured === null
-            ? 'Se verifică configurarea email…'
-            : smtpConfigured
-            ? `✅ Email configurat · expeditor: ${from}`
-            : '⚠️ SMTP neconfigurat — emailurile vor fi doar logate în consolă (mod test). Setează SMTP_HOST/SMTP_USER/SMTP_PASS/EMAIL_FROM în .env.'}
+          {sendingEnabled === null
+            ? 'Se verifică trimiterea e-mailurilor…'
+            : sendingEnabled
+            ? `✅ Se trimite din căsuța proprie · expeditor: ${from}`
+            : `⚠️ ${blockedMessage}`}
         </div>
 
         {/* AI draft */}
@@ -216,7 +213,7 @@ export default function RfqPage() {
           <div className="flex items-center gap-3">
             <button
               onClick={send}
-              disabled={sending}
+              disabled={sending || sendingEnabled === false}
               className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-orange-600 hover:bg-orange-500 disabled:opacity-50 transition"
             >
               {sending ? 'Se trimite…' : `Trimite la ${recipients.length} destinatar${recipients.length === 1 ? '' : 'i'}`}

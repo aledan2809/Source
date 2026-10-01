@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkRateLimit } from '@/lib/validation';
-import { sendRfqEmail, emailConfigured, defaultFrom } from '@/lib/email';
+import { sendRfqEmail, outreachStatus } from '@/lib/email';
 import { recordSends, type RfqSend } from '@/lib/rfq';
 import { logger } from '@/lib/logger';
 
@@ -17,7 +17,7 @@ interface SendPayload {
   resultId?: string;
   source?: 'sourcing' | 'manual';
   // NOTE: a caller-supplied `from` is intentionally NOT accepted — the sender is
-  // always forced to defaultFrom() (env) to prevent spoofing through the verified domain.
+  // always forced to OUTREACH_SMTP_FROM (the own mailbox) to prevent spoofing.
 }
 
 const MAX_EMAILS_PER_REQUEST = 50;
@@ -47,13 +47,25 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Supplier e-mails are cold outreach: only the own mailbox may carry them.
+  // Not configured, pointed at Resend/Brevo, or app public → refuse the whole
+  // batch, send nothing, record nothing. The message tells the user to copy it.
+  const status = outreachStatus();
+  if (!status.ready) {
+    log.warn('RFQ send refused — outreach mailbox not usable', { reason: status.reason, count: emails.length });
+    return NextResponse.json(
+      { error: status.message, blocked: true, reason: status.reason, sent: 0, failed: 0 },
+      { status: 503 }
+    );
+  }
+
   const source = payload.source === 'manual' ? 'manual' : 'sourcing';
   const records: Array<Omit<RfqSend, 'id' | 'sentAt'>> = [];
   let sent = 0;
   let failed = 0;
 
   for (const e of emails) {
-    // `from` is always forced to the env-configured sender — never trust the caller (anti-spoof).
+    // `from` is always forced to the own mailbox's sender — never trust the caller (anti-spoof).
     const res = await sendRfqEmail({ to: e.to, subject: e.subject, body: e.body });
     if (res.ok) sent++;
     else failed++;
@@ -69,13 +81,12 @@ export async function POST(request: NextRequest) {
   }
 
   const saved = await recordSends(records);
-  log.info('RFQ batch processed', { sent, failed, configured: emailConfigured() });
+  log.info('RFQ batch processed', { sent, failed });
 
   return NextResponse.json({
     sent,
     failed,
-    smtpConfigured: emailConfigured(),
-    from: defaultFrom(),
+    from: status.from,
     results: saved.map((s) => ({ id: s.id, to: s.to, status: s.status, error: s.error })),
   });
 }
